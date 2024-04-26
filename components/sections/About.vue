@@ -1,38 +1,45 @@
 <template>
-  <section class="h-screen pt-24" id="about">
-    <div
-      v-motion-slide-bottom
-      class="badge badge-outline text-white font-light py-4 px-4 border-[#999]/55"
-    >
-      <svg
-        class="fill-[#ffff] mr-2"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 -960 960 960"
-        width="24"
+  <section class="h-screen px-20 pt-24 lg:px-0" id="about">
+    <div class="">
+      <div
+        v-motion="SlideBottom"
+        class="badge badge-outline text-white font-light py-4 px-4 border-[#999]/55"
       >
-        <path
-          d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"
-        />
-      </svg>
-      ABOUT
-    </div>
+        <svg
+          class="fill-[#ffff] mr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path
+            d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"
+          />
+        </svg>
+        ABOUT
+      </div>
 
-    <div class="pt-12">
-      <h1 class="text-6xl font-bold text-white pb-10">
-        Overview<span class="font-extrabold text-[#28e98c]">.</span>
-      </h1>
-      <p class="text-xl text-white/55 font-light leading-relaxed w-[90%]">
-        Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer based
-        in <strong>Morocco</strong>. My passion is to create elegant and
-        functional web solutions that meet both industry standards and user
-        needs. I'm dedicated to acquire new skills that prove useful in the web
-        development landscape. My main stack currently is
-        <strong>Nuxt.js, Vue.js</strong> in combination with
-        <strong>Tailwind CSS</strong>.
-      </p>
+      <div class="pt-12">
+        <h1 v-motion="SlideBottom" class="text-6xl font-bold text-white pb-10">
+          Overview<span class="font-extrabold text-[#28e98c]">.</span>
+        </h1>
+        <p
+          v-motion="SlideBottom"
+          class="text-xl text-white/55 font-light leading-relaxed w-[90%] md:w-full"
+        >
+          Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer
+          based in <strong>Morocco</strong>. My passion is to create elegant and
+          functional web solutions that meet both industry standards and user
+          needs. I'm dedicated to acquire new skills that prove useful in the
+          web development landscape. My main stack currently is
+          <strong>Nuxt.js, Vue.js</strong> in combination with
+          <strong>Tailwind CSS</strong>.
+        </p>
+      </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { SlideBottom } from "@/assets/motions";
+</script>

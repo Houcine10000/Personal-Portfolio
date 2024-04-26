@@ -1,26 +1,17 @@
 <template>
-  <div class="layout h-screen bg-[#1f1f1f]">
-    <div class="grid grid-cols-12 mx-auto overflow-auto scroll-smooth">
-      <!-- Left sidbar -->
-      <div class="col-span-4 flex items-center">
-        <div class="fixed ml-5">
-          <CardInfo />
-        </div>
-      </div>
-
-      <!-- Main content -->
-      <main class="col-span-7 mr-16">
-        <div class="h-screen">
-          <slot />
-        </div>
-      </main>
-
-      <!-- Right sidbar -->
-      <div class="col-span-1 flex items-center justify-center">
-        <div class="fixed mr-14">
-          <NavBar />
-        </div>
-      </div>
+  <div class="grid gap-4 sm:grid-cols-12">
+    <!-- Left sidbar -->
+    <div class="rounded-lg shadow sm:col-span-12 lg:col-span-4 h-[100vh]">
+      <CardInfo class="ml-5 lg:fixed lg:top-[50%] lg:-translate-y-[50%]" />
+    </div>
+    <!-- Main content -->
+    <main class="rounded-lg shadow sm:col-span-12 lg:col-span-7">
+      <slot />
+    </main>
+    <!-- Right sidbar -->
+    <div class="rounded-lg shadow lg:col-span-1 h-[100vh]">
+      <NavBar class="fixed top-[50%] -translate-y-[50%] hidden xl:block" />
+      <SideBar class="fixed xl:hidden block" />
     </div>
   </div>
 </template>
