@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+@layer components {
+  .social-btn {
+    @apply border-2 ease-in-out duration-300 border-[#999] hover:border-[#28e98c] px-3 py-3 rounded-full cursor-pointer;
+  }
+
+  .social-svg {
+    @apply fill-[#999] ease-in-out duration-300 group-hover:fill-[#28e98c] w-5 h-5;
+  }
+
+  /* .social-svg-hire {
+    @apply fill-[#000] ease-in-out duration-300 group-hover:fill-[#28e98c] w-5 h-[px];
+  } */
+
+  .hireMe-btn {
+    @apply btn w-[18rem] md:btn-block h-[52px] no-animation ease-in-out duration-300 bg-[#28e98c] hover:border-[#28e98c] hover:bg-transparent hover:text-[#28e98c] text-[#000] uppercase rounded-full font-normal text-[16px];
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #28e98c;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #12db7a;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #05ad5c;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

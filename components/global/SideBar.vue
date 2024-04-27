@@ -5,21 +5,16 @@
       <!-- Page content here -->
       <label
         for="my-drawer-4"
-        class="drawer-button btn group bg-transparent hover:bg-transparent border-[#999] hover:border-teal-500 btn-circle no-animation mt-[6%]"
+        class="drawer-button btn group bg-transparent hover:bg-transparent btn-circle no-animation social-btn border"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block w-5 h-5 stroke-[#999] group-hover:stroke-teal-500"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
+        <div class="flex items-end flex-col gap-2">
+          <span
+            class="w-6 h-[2.5px] bg-white group-hover:bg-[#28e98c] social-svg"
+          ></span>
+          <span
+            class="w-3 h-[1.5px] bg-white group-hover:bg-[#28e98c] social-svg"
+          ></span>
+        </div>
       </label>
     </div>
 
@@ -31,9 +26,14 @@
         class="drawer-overlay"
       ></label>
       <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
+        <li v-for="item in navLinks" :key="item.id">
+          <a :href="`#${item.id}`">{{ item.title }}</a>
+        </li>
       </ul>
     </div>
   </div>
 </template>
+
+<script setup>
+import { navLinks } from "~/assets/constants";
+</script>

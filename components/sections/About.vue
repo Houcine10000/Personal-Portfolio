@@ -1,5 +1,5 @@
 <template>
-  <section class="h-screen px-20 pt-24 lg:px-0" id="about">
+  <section class="h-screen px-20 pt-20 lg:px-0" id="about">
     <div class="">
       <div
         v-motion="SlideBottom"
@@ -41,5 +41,5 @@
 </template>
 
 <script setup>
-import { SlideBottom } from "@/assets/motions";
+import { SlideBottom } from "~/assets/motions";
 </script>

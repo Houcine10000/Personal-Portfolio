@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-20 h-screen px-20 lg:px-0" id="home">
+  <section class="h-screen px-20 lg:px-0 pt-20" id="home">
     <div class="">
       <div
         class="badge badge-outline text-white font-light py-4 px-4 border-[#999]/55"
@@ -38,21 +38,4 @@
   </section>
 </template>
 
-<script setup>
-// const initial = {
-//   y: 50,
-//   opacity: 0,
-//   transition: {
-//     stiffness: 100,
-//   },
-// };
-
-// const enter = {
-//   y: 0,
-//   opacity: 1,
-//   transition: {
-//     stiffness: 100,
-//     ease: "easeInOut",
-//   },
-// };
-</script>
+<script setup></script>
