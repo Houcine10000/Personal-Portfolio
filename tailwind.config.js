@@ -2,18 +2,40 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#040918",
+        secondary: "#03071e",
+        text_primary: "#E5E7EB",
+        headings: "#6366F1",
+        buttons_primary: "#00eaff",
+        buttons_secondary: "#14B8A6",
+        icons_border: "1E293B",
+        tertiary: "#151030",
+      },
+
+      keyframes: {
+        "border-spin": {
+          "100%": {
+            transform: "rotate(-360deg)",
+          },
+        },
+      },
+      animation: {
+        "border-spin": "border-spin 7s linear infinite",
+      },
+    },
 
     screens: {
-      sm: "640px",
+      xs: "650px",
 
-      md: "768px",
+      sm: "855px",
 
-      lg: "1200px",
+      md: "990px",
+
+      lg: "1180px",
 
       xl: "1280px",
-
-      "2xl": "1536px",
     },
   },
   plugins: [

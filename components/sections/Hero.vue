@@ -1,11 +1,9 @@
 <template>
-  <section class="h-screen px-20 lg:px-0 pt-20" id="home">
-    <div class="">
-      <div
-        class="badge badge-outline text-white font-light py-4 px-4 border-[#999]/55"
-      >
+  <section id="home" class="section">
+    <div class="badg-box">
+      <div class="badg">
         <svg
-          class="fill-[#ffff] mr-2"
+          class="fill-text_primary mr-2"
           xmlns="http://www.w3.org/2000/svg"
           height="18"
           viewBox="0 -960 960 960"
@@ -17,23 +15,27 @@
         </svg>
         INTRODUCE
       </div>
+    </div>
 
-      <div class="py-14">
-        <p
-          class="text-white text-[3.50rem] text-wrap font-light leading-tight whitespace-normal"
-        >
-          Say Hi from <span class="text-[#28e98c]">Hoceine</span>, Passionate
-          coder crafting digital solutions with creativity and precision.
-        </p>
+    <div class="py-14">
+      <p
+        class="text-text_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[3.4rem] xl:text-[3.7rem] font-light leading-tight"
+      >
+        Say Hi from
+        <span
+          class="bg-gradient-to-r text-gradient bg-clip-text text-transparent"
+          >Hoceine</span
+        >, Passionate coder crafting digital solutions with creativity and
+        precision.
+      </p>
 
-        <!-- <p class="pt-12 text-white/55 font-light w-96">
+      <p class="pt-12 text-white/55 font-light">
         I create and develop a clean UI/UX for my users
-      </p> -->
-      </div>
+      </p>
+    </div>
 
-      <!-- <div class="flex justify-center items-center pt-20">
-        <ChunkDown />
-      </div> -->
+    <div class="flex sm:justify-end items-center">
+      <ChunkDown />
     </div>
   </section>
 </template>

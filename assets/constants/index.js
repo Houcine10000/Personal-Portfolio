@@ -1,20 +1,198 @@
 export const hireMeBtn = [
   {
-    svg: `<svg
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 512 512"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  enable-background="new 0 0 512 512"
->
-  <g>
-    <g>
-      <path
-        d="M480.5,56H31.3C20,56,10.9,65.2,10.9,76.5v359c0,11.3,9.1,20.5,20.4,20.5h449.2c11.3,0,20.4-9.2,20.4-20.5v-359    C500.9,65.2,491.7,56,480.5,56z M432.4,97L256.3,276.2L80.2,97H432.4z M51.7,415V126.5l190,193.3c10.3,10.9,18.6,9,29.1,0    l189.3-192.5V415H51.7z"
-      />
-    </g>
-  </g>
-</svg>`,
+    svg: `
+    <svg height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M4.02 42l41.98-18-41.98-18-.02 14 30 4-30 4z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>`,
+  },
+];
+
+export const projects = [
+  {
+    name: "Nikee Website Revamp",
+    description:
+      "Revamped Nike's website with a contemporary design, optimized UI/UX, and dynamic sliders for a captivating user experience, enhancing brand engagement and online shopping satisfaction.",
+    tags: [
+      {
+        name: "VueJs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "TailwindCss",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: "/images/projects/nike/moockup.png",
+    source_code_link: "https://github.com/HoceineEl/nike-website",
+    url: "/nikee",
+    demo: "https://nikee.pages.dev",
+  },
+
+  {
+    name: "SOSIPO Financial Management App",
+    description:
+      "Developed a financial management web app for SOSIPO Association, automating processes, enhancing transparency, and boosting efficiency. Achieved financial stability and member satisfaction.",
+    tags: [
+      {
+        name: "Laravel",
+        color: "red-text-gradient",
+      },
+      {
+        name: "MySql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Bootstrap",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "ChartJs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Ajax",
+        color: "green-text-gradient",
+      },
+    ],
+    image: "/images/projects/sosipo/mockup.png",
+    demo: "https://youtu.be/LHKfUdVW8VA",
+    url: "/sosipo",
+    source_code_link: "https://github.com/Hzekrii/SosipoProject",
+  },
+
+  {
+    name: "Nikee Website Revamp",
+    description:
+      "Revamped Nike's website with a contemporary design, optimized UI/UX, and dynamic sliders for a captivating user experience, enhancing brand engagement and online shopping satisfaction.",
+    tags: [
+      {
+        name: "VueJs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "TailwindCss",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: "/images/projects/nike/moockup.png",
+    source_code_link: "https://github.com/HoceineEl/nike-website",
+    url: "/nikee",
+    demo: "https://nikee.pages.dev",
+  },
+
+  {
+    name: "SOSIPO Financial Management App",
+    description:
+      "Developed a financial management web app for SOSIPO Association, automating processes, enhancing transparency, and boosting efficiency. Achieved financial stability and member satisfaction.",
+    tags: [
+      {
+        name: "Laravel",
+        color: "red-text-gradient",
+      },
+      {
+        name: "MySql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Bootstrap",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "ChartJs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Ajax",
+        color: "green-text-gradient",
+      },
+    ],
+    image: "/images/projects/sosipo/mockup.png",
+    demo: "https://youtu.be/LHKfUdVW8VA",
+    url: "/sosipo",
+    source_code_link: "https://github.com/Hzekrii/SosipoProject",
+  },
+];
+
+export const technologies = [
+  {
+    name: "VueJS",
+    icon: "/images/tech/vue.svg",
+    progress: 90,
+  },
+
+  {
+    name: "NuxtJs",
+    icon: "/images/tech/nuxt.svg",
+    progress: 95,
+  },
+
+  {
+    name: "Laravel",
+    icon: "/images/tech/laravel.svg",
+    progress: 80,
+  },
+
+  {
+    name: "TailwindCSS",
+    icon: "/images/tech/tailwind.svg",
+    progress: 105,
+  },
+
+  {
+    name: "JavaScript",
+    icon: "/images/tech/js.svg",
+    progress: 75,
+  },
+
+  {
+    name: "HTML5",
+    icon: "/images/tech/html.svg",
+    progress: 110,
+  },
+
+  {
+    name: "CSS3",
+    icon: "/images/tech/css.svg",
+    progress: 110,
+  },
+
+  {
+    name: "Github",
+    icon: "/images/tech/github.svg",
+    progress: 75,
+  },
+
+  {
+    name: "Vite",
+    icon: "/images/tech/vite.svg",
+    progress: 70,
+  },
+
+  {
+    name: "Vs Code",
+    icon: "/images/tech/vscode.svg",
+    progress: 90,
+  },
+];
+
+export const services = [
+  {
+    title: "Web Developer",
+    icon: "/images/web.png",
+  },
+  {
+    title: "Vue & Nuxt Developer",
+    icon: "/images/mobile.png",
+  },
+  {
+    title: "Laravel Developer",
+    icon: "/images/backend.png",
   },
 ];
 
@@ -27,9 +205,6 @@ export const socialBtn = [
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
         >
-          <title>github [#142]</title>
-          <desc>Created with Sketch.</desc>
-          <defs></defs>
           <g id="Page-1" stroke="none" stroke-width="1">
             <g
               id="Dribbble-Light-Preview"
@@ -38,13 +213,14 @@ export const socialBtn = [
               <g id="icons" transform="translate(56.000000, 160.000000)">
                 <path
                   d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                  id="github-[#142]"
                 ></path>
               </g>
             </g>
           </g>
         </svg>
     `,
+
+    href: "https://github.com/Houcine10000",
   },
 
   {
@@ -69,6 +245,8 @@ export const socialBtn = [
           />
         </svg>
     `,
+
+    href: "https://www.linkedin.com/in/elhoucine-essamlali-704490282/",
   },
 ];
 
@@ -82,7 +260,9 @@ export const navLinks = [
           d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
         />
       </svg>`,
+
     title: "Home",
+
     id: "home",
   },
 

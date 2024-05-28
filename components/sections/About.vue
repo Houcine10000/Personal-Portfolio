@@ -1,10 +1,7 @@
 <template>
-  <section class="h-screen px-20 pt-20 lg:px-0" id="about">
-    <div class="">
-      <div
-        v-motion="SlideBottom"
-        class="badge badge-outline text-white font-light py-4 px-4 border-[#999]/55"
-      >
+  <section class="section sm:pt-20 h-[60vh]" id="about">
+    <div class="badg-box">
+      <div class="badg">
         <svg
           class="fill-[#ffff] mr-2"
           xmlns="http://www.w3.org/2000/svg"
@@ -18,24 +15,26 @@
         </svg>
         ABOUT
       </div>
+    </div>
 
-      <div class="pt-12">
-        <h1 v-motion="SlideBottom" class="text-6xl font-bold text-white pb-10">
-          Overview<span class="font-extrabold text-[#28e98c]">.</span>
-        </h1>
-        <p
-          v-motion="SlideBottom"
-          class="text-xl text-white/55 font-light leading-relaxed w-[90%] md:w-full"
-        >
-          Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer
-          based in <strong>Morocco</strong>. My passion is to create elegant and
-          functional web solutions that meet both industry standards and user
-          needs. I'm dedicated to acquire new skills that prove useful in the
-          web development landscape. My main stack currently is
-          <strong>Nuxt.js, Vue.js</strong> in combination with
-          <strong>Tailwind CSS</strong>.
-        </p>
-      </div>
+    <div class="pt-12">
+      <h1
+        class="text-[3rem] xs:text-[3.5rem] sm:text-[4rem] font-bold text-white pb-10"
+      >
+        Overview.
+      </h1>
+
+      <p
+        class="lg:text-xl xs:text-[1.2rem] text-slate-400 font-light leading-relaxed lg:w-full"
+      >
+        Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer based
+        in <strong>Morocco</strong>. My passion is to create elegant and
+        functional web solutions that meet both industry standards and user
+        needs. I'm dedicated to acquire new skills that prove useful in the web
+        development landscape. My main stack currently is
+        <strong>Nuxt.js, Vue.js</strong> in combination with
+        <strong>Tailwind CSS</strong>.
+      </p>
     </div>
   </section>
 </template>

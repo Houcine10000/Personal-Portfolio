@@ -1,11 +1,55 @@
 <template>
-  <a
-    href="#about"
-    aria-label="Explore the About Section"
-    class="w-[20px] h-[30px] md:w-[35px] md:h-[64px] rounded-3xl border-4 border-white flex justify-center items-start pt-1"
-  >
-    <span
-      class="w-1 h-1 md:w-3 md:h-3 rounded-full bg-white animate-bounce"
-    ></span>
-  </a>
+  <div class="w-fit h-fit relative cursor-pointer bottom-5">
+    <div
+      class="flex flex-col items-center justify-center w-44 h-44 border rounded-full border-white/15"
+    >
+      <p
+        :class="`${circularText ? 'animate-spin' : ''} font-normal uppercase text-[18px]`"
+        ref="circularText"
+      >
+        my projects • my projects •
+      </p>
+
+      <div class="arrow w-10 h-10 absolute">
+        <svg
+          class="w-full h-full fill-white"
+          x="0"
+          y="0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -960 960 960"
+        >
+          <path
+            d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script setup>
+import CircleType from "circletype";
+
+const circularText = ref(null);
+
+onMounted(() => {
+  // Initialize CircleType
+  const rotate = new CircleType(circularText.value).radius(0);
+
+  // Add scroll listener when the component is mounted
+  // window.addEventListener("scroll", handleScroll);
+});
+
+// Define handleScroll function
+// const handleScroll = () => {
+//   if (circularText.value) {
+//     circularText.value.style.transform = `rotate(${window.scrollY * 0.40}deg)`;
+//   }
+// };
+</script>
+
+<style scoped>
+.animate-spin {
+  animation-duration: 6s;
+}
+</style>
