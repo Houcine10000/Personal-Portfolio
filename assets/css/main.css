@@ -66,8 +66,14 @@
   }
 
   .line-shape{
-    @apply bg-cyan-400 h-20 w-full absolute bottom-0 left-0;
-    clip-path: polygon(38% 91%, 100% 91%, 100% 94%, 36% 94%, 31% 100%, 5% 100%, 0 91%);
+    @apply bg-cyan-400 h-28 w-full absolute bottom-0 left-0;
+    clip-path: polygon(30% 91%, 100% 91%, 100% 94%, 20% 94%, 18% 100%, 2% 100%, 0px 91%);
+  }
+
+  .contact-btn{
+    @apply flex items-center text-primary bg-buttons_primary font-semibold text-lg w-fit px-5 py-3 text-center;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+
   }
 }
 

@@ -6,7 +6,6 @@
     <ClientOnly>
       <ChunkTheExperience />
     </ClientOnly>
-    <!-- <ChunkTresJsModel /> -->
     <LazySectionsProjects />
     <LazySectionsContact />
   </div>
