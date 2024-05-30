@@ -1,77 +1,106 @@
 <template>
-  <section
-    id="contact"
-    class="section h-fit flex justify-center"
-    role="region"
-    aria-labelledby="contact-heading"
-  >
-    <div
-      class="w-full mt-2 mb-16 lg:mx-10 xl:mx-0 xl:mr-5 transition-all duration-300 ease-out rounded-lg p-[1px] bg-gradient-to-b text-gradient"
-      v-motion-slide-visible-once-left
-    >
-      <div class="bg-secondary py-8 px-10 rounded-lg">
-        <p class="uppercase">Get In Touch</p>
-        <h2
-          id="contact-heading"
-          class="text-3xl md:text-5xl font-bold mt-4 mb-8"
-        >
-          Contact Us
-        </h2>
+  <section class="section" id="contact">
+    <form @submit.prevent="sendMail" class="max-w-lg mx-auto">
+      <div class="text-3xl font-medium text-white relative h-20 mb-16">
+        <span> Say hello </span>
 
-        <form @submit.prevent="sendMail" ref="form" class="flex flex-col gap-5">
-          <label for="from_name" class="form-label">Your Name</label>
-          <input
-            class="form-input"
-            type="text"
-            name="from_name"
-            v-model="from_name"
-            placeholder="What's your good name?"
-            aria-label="Your Name"
-          />
-          <label for="from_email" class="form-label">Your Email</label>
-          <input
-            class="form-input"
-            type="email"
-            name="from_email"
-            v-model="from_email"
-            placeholder="What's your Email?"
-            aria-label="Your Email"
-          />
-          <label for="message" class="form-label">Your Message</label>
-          <textarea
-            name="message"
-            v-model="message"
-            cols="30"
-            rows="4"
-            class="form-input"
-            placeholder="What you want to say?"
-            aria-label="Your Message"
-          ></textarea>
-          <button
-            type="submit"
-            class="bg-tertiary rounded-lg w-fit py-3 px-6 font-semibold"
-            aria-label="Send Message"
-          >
-            Send
-          </button>
-        </form>
+        <div class="line-shape"></div>
       </div>
-    </div>
+
+      <div class="relative z-0 w-full mb-10 group">
+        <input
+          type="email"
+          name="from_email"
+          v-model="from_email"
+          id="floating_text"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+          placeholder=" "
+          @blur="check"
+        />
+
+        <label
+          for="from_email"
+          class="peer-focus:font-medium absolute text-sm text-white duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-slate-600 peer-focus:dark:text-slate-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6"
+          >Your email</label
+        >
+
+        <div
+          class="button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[3px] bg-gradient-to-r from-buttons_primary from-50% to-slate-600 to-50%"
+        ></div>
+
+        <div ref="warningEml"></div>
+      </div>
+
+      <div class="relative z-0 w-full mb-16 group">
+        <textarea
+          cols="30"
+          rows="1"
+          v-model="message"
+          name="message"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+          placeholder=" "
+        />
+
+        <label
+          for="message"
+          class="peer-focus:font-medium absolute text-sm text-white duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-slate-600 peer-focus:dark:text-slate-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6"
+          >Message</label
+        >
+
+        <div
+          class="button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[3px] bg-gradient-to-r from-buttons_primary from-50% to-slate-600 to-50%"
+        ></div>
+
+        <div ref="warning"></div>
+      </div>
+
+      <button
+        type="submit"
+        class="contact-btn"
+        v-for="(item, index) in hireMeBtn"
+        :key="index"
+      >
+        <div class="fill-primary social-svg pr-7" v-html="item.svg" />
+
+        Send message
+      </button>
+    </form>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { hireMeBtn } from "~/assets/constants";
+
 import emailjs from "@emailjs/browser";
 
 const form = ref(null);
-const from_name = ref("");
+const warning = ref(null);
+const warningEml = ref(null);
 const from_email = ref("");
 const message = ref("");
+const arr = ref([]);
+
+const check = () => {
+  if (from_email.value !== "") {
+    for (let i = 0; i <= from_email.value.split("").length; i++) {
+      if (from_email.value.includes("@", 0)) {
+        const el = document.createElement("p");
+        el.classList.add("hidden");
+        el.innerText = ``;
+        return warningEml.value.appendChild(el);
+      } else if (i != "@") {
+        const el = document.createElement("p");
+        el.classList.add("text-red-500");
+        el.innerText = `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`;
+        return warningEml.value.appendChild(el);
+      }
+    }
+  }
+};
 
 const sendMail = () => {
   if (
-    from_name.value !== "" &&
+    // from_name.value !== "" &&
     from_email.value !== "" &&
     message.value !== ""
   ) {
@@ -95,26 +124,21 @@ const sendMail = () => {
         }
       );
   } else {
-    setElm("Please fill all the fields.", "text-red-400");
+    setElm("Please fill all this field.", "text-red-500");
   }
 };
 
 function setElm(text, color) {
-  const el = document.createElement("p");
-  el.classList.add(color);
-  el.innerText = text;
-  form.value.appendChild(el);
-  setTimeout(() => {
-    el.remove();
-  }, 2500);
+  const ele = document.createElement("p");
+
+  ele.classList.add(color);
+  ele.innerText = text;
+  warning.value.appendChild(ele);
 }
 </script>
 
-<style scoped>
-.form-label {
-  @apply font-normal text-[14px] xs:font-medium xs:text-[16px];
-}
-.form-input {
-  @apply py-1 px-2 sm:py-2 text-[12px] sm:text-[16px] sm:px-4 rounded-md focus:outline-none bg-[#1E1E3B];
+<style>
+.button {
+  background-size: 200% 100%;
 }
 </style>

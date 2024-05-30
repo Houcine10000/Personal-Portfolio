@@ -3,9 +3,9 @@
     <SectionsHero />
     <LazySectionsAbout />
     <LazySectionsTech />
-    <ClientOnly>
+    <!-- <ClientOnly>
       <ChunkTheExperience />
-    </ClientOnly>
+    </ClientOnly> -->
     <LazySectionsProjects />
     <LazySectionsContact />
   </div>
