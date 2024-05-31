@@ -15,7 +15,7 @@
           id="floating_text"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
           placeholder=" "
-          @blur="check"
+          @input="check"
         />
 
         <label
@@ -28,7 +28,9 @@
           class="button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[3px] bg-gradient-to-r from-buttons_primary from-50% to-slate-600 to-50%"
         ></div>
 
-        <div ref="warningEml"></div>
+        <div :class="`${warningEmlCls}`">
+          {{ warningEmlTxt }}
+        </div>
       </div>
 
       <div class="relative z-0 w-full mb-16 group">
@@ -75,25 +77,33 @@ import emailjs from "@emailjs/browser";
 
 const form = ref(null);
 const warning = ref(null);
-const warningEml = ref(null);
+const warningEmlCls = ref(null);
+const warningEmlTxt = ref(null);
+
 const from_email = ref("");
 const message = ref("");
-const arr = ref([]);
 
 const check = () => {
   if (from_email.value !== "") {
-    for (let i = 0; i <= from_email.value.split("").length; i++) {
-      if (from_email.value.includes("@", 0)) {
-        const el = document.createElement("p");
-        el.classList.add("hidden");
-        el.innerText = ``;
-        return warningEml.value.appendChild(el);
-      } else if (i != "@") {
-        const el = document.createElement("p");
-        el.classList.add("text-red-500");
-        el.innerText = `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`;
-        return warningEml.value.appendChild(el);
-      }
+    if (!from_email.value.includes("@", 0)) {
+      warningEmlCls.value = "text-red-500";
+      warningEmlTxt.value = `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`;
+      // setElm(
+      //   `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`,
+      //   "text-red-500"
+      // );
+    } else if (from_email.value.slice(from_email.value.length - 1) === "@") {
+      warningEmlCls.value = "text-red-500";
+      warningEmlTxt.value = `Please enter a part following '@'. '${from_email.value}' is incomplete`;
+
+      // setElm(
+      //   `Please enter a part following '@'. '${from_email.value}' is incomplete`,
+      //   "text-red-500"
+      // );
+    } else {
+      warningEmlCls.value = null;
+      warningEmlTxt.value = null;
+      // setElm(``, "hidden");
     }
   }
 };
@@ -130,10 +140,15 @@ const sendMail = () => {
 
 function setElm(text, color) {
   const ele = document.createElement("p");
+  // const el = document.createElement("p");
 
   ele.classList.add(color);
   ele.innerText = text;
   warning.value.appendChild(ele);
+
+  // el.classList.add(color);
+  // el.innerText = text;
+  // warningEml.value.appendChild(el);
 }
 </script>
 
