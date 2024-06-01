@@ -7,7 +7,7 @@ export default {
         primary: "#040918",
         secondary: "#03071e",
         text_primary: "#E5E7EB",
-        headings: "#6366F1",
+        error_primary: "#ff0e46",
         buttons_primary: "#00eaff",
         buttons_secondary: "#14B8A6",
         icons_border: "1E293B",
