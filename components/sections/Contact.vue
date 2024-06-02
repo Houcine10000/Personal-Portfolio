@@ -1,12 +1,18 @@
 <template>
   <section class="section" id="contact">
     <form @submit.prevent="sendMail" class="max-w-lg mx-auto">
-      <div class="text-3xl font-medium text-white relative h-20 mb-16">
+      <div
+        class="text-3xl font-medium text-white relative h-20 mb-16"
+        v-motion-slide-visible-once-top
+      >
         <span>Say hello</span>
         <div class="line-shape"></div>
       </div>
 
-      <div class="relative z-0 w-full mb-10 group">
+      <div
+        class="relative z-0 w-full mb-10 group"
+        v-motion-slide-visible-once-left
+      >
         <input
           type="email"
           name="from_email"
@@ -17,21 +23,31 @@
           @input="handleEmailInput"
           @blur="handleEmailBlur"
         />
+
         <label
           for="from_email"
-          class="peer-focus:font-medium absolute text-sm text-white duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-slate-600 peer-focus:dark:text-slate-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6"
+          class="font-light absolute text-md text-white/85 duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white/20 peer-focus:dark:text-white/60 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7"
         >
           Your email
         </label>
         <div
-          :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[3px] bg-gradient-to-r `"
+          :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
         ></div>
-        <div :class="warningEmlCls">
+
+        <div
+          v-if="warningEmlTxt"
+          :class="`${warningEmlCls} pt-2 flex font-medium`"
+        >
+          <Icon
+            name="mdi-light:alert"
+            class="text-2xl font-semibold stroke-error_primary mr-1"
+          />
+
           {{ warningEmlTxt }}
         </div>
       </div>
 
-      <div class="relative z-0 w-full mb-16 group">
+      <div class="relative z-0 w-full group" v-motion-slide-visible-once-right>
         <textarea
           cols="30"
           rows="1"
@@ -44,14 +60,37 @@
         />
         <label
           for="message"
-          class="peer-focus:font-medium absolute text-sm text-white duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-slate-600 peer-focus:dark:text-slate-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-95 peer-focus:-translate-y-6"
+          class="font-light absolute text-md text-white/85 duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white/20 peer-focus:dark:text-white/60 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7"
         >
           Message
         </label>
         <div
-          :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[3px] bg-gradient-to-r `"
+          :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
         ></div>
-        <div :class="warningMsgCls">{{ warningMsgTxt }}</div>
+
+        <div
+          v-if="warningMsgTxt"
+          :class="`${warningMsgCls} pt-2 flex font-medium`"
+        >
+          <Icon
+            name="mdi-light:alert"
+            class="text-2xl font-semibold stroke-error_primary mr-1"
+          />
+
+          {{ warningMsgTxt }}
+        </div>
+      </div>
+
+      <div
+        v-if="gineralWarningMsg"
+        :class="`${gineralWarningCls} contact-btn mt-10 ${gineralWarningCls === 'text-yellow-400' ? 'bg-error_secondary' : 'bg-succes_primary'}  text-sm font-light py-4 w-full`"
+      >
+        <Icon
+          :name="`${gineralWarningCls === 'text-yellow-400' ? 'mdi-light:information' : 'mdi-light:flash'}`"
+          :class="`text-2xl ${gineralWarningCls === 'text-yellow-400' ? 'stroke-yellow-400' : 'stroke-green-400'}  mr-1`"
+        />
+
+        {{ gineralWarningMsg }}
       </div>
 
       <button
@@ -59,12 +98,11 @@
         class="contact-btn"
         v-for="(item, index) in hireMeBtn"
         :key="index"
+        v-motion-slide-visible-once-bottom
       >
         <div class="fill-primary social-svg pr-7" v-html="item.svg" />
         Send message
       </button>
-
-      <div :class="gineralWarningCls">{{ gineralWarningMsg }}</div>
     </form>
   </section>
 </template>
@@ -157,11 +195,18 @@ const sendMail = () => {
       )
       .then(
         () => {
+          // setElm("text-green-400", "Your message has been sent successfully.");
+
           gineralWarningCls.value = "text-green-400";
           gineralWarningMsg.value = "Your message has been sent successfully.";
           form.value.reset();
         },
         () => {
+          // setElm(
+          //   "text-yellow-400",
+          //   "There was an error sending your message. Please try again later."
+          // );
+
           gineralWarningCls.value = "text-yellow-400";
           gineralWarningMsg.value =
             "There was an error sending your message. Please try again later.";
@@ -182,5 +227,6 @@ const setElm = (color, text) => {
 <style>
 .button {
   background-size: 200% 100%;
+  color: #4adc7f49;
 }
 </style>

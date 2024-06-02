@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   
   css: ['~/assets/css/main.css'],
 
-  modules: ["@nuxtjs/tailwindcss", '@vueuse/motion/nuxt', "@nuxt/image", '@vueuse/nuxt'],
+  modules: ["@nuxtjs/tailwindcss", '@vueuse/motion/nuxt', "@nuxt/image", '@vueuse/nuxt', 'nuxt-icon'],
 
   nitro: {
     devProxy: {
