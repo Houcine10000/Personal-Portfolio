@@ -40,5 +40,4 @@
 </template>
 
 <script setup>
-import { SlideBottom } from "~/assets/motions";
 </script>

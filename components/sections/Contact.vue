@@ -1,6 +1,6 @@
 <template>
   <section class="section" id="contact">
-    <form @submit.prevent="sendMail" class="max-w-lg mx-auto">
+    <form ref="form" @submit.prevent="sendMail" class="max-w-lg mx-auto">
       <div
         class="text-3xl font-medium text-white relative h-20 mb-16"
         v-motion-slide-visible-once-top
@@ -9,15 +9,11 @@
         <div class="line-shape"></div>
       </div>
 
-      <div
-        class="relative z-0 w-full mb-10 group"
-        v-motion-slide-visible-once-left
-      >
+      <div class="relative z-0 w-full mb-10 group" v-motion="SlideBottom">
         <input
           type="email"
           name="from_email"
           v-model="from_email"
-          id="floating_text"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
           placeholder=" "
           @input="handleEmailInput"
@@ -30,6 +26,7 @@
         >
           Your email
         </label>
+
         <div
           :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
         ></div>
@@ -37,6 +34,7 @@
         <div
           v-if="warningEmlTxt"
           :class="`${warningEmlCls} pt-2 flex font-medium`"
+          v-motion="SlideBottom"
         >
           <Icon
             name="mdi-light:alert"
@@ -47,7 +45,7 @@
         </div>
       </div>
 
-      <div class="relative z-0 w-full group" v-motion-slide-visible-once-right>
+      <div class="relative z-0 w-full group" v-motion="SlideBottom">
         <textarea
           cols="30"
           rows="1"
@@ -58,12 +56,14 @@
           @input="handleMessageInput"
           @blur="handleMessageBlur"
         />
+
         <label
           for="message"
           class="font-light absolute text-md text-white/85 duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white/20 peer-focus:dark:text-white/60 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7"
         >
           Message
         </label>
+
         <div
           :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
         ></div>
@@ -71,6 +71,7 @@
         <div
           v-if="warningMsgTxt"
           :class="`${warningMsgCls} pt-2 flex font-medium`"
+          v-motion="SlideBottom"
         >
           <Icon
             name="mdi-light:alert"
@@ -92,7 +93,6 @@
 
         {{ gineralWarningMsg }}
       </div>
-
       <button
         type="submit"
         class="contact-btn"
@@ -100,8 +100,11 @@
         :key="index"
         v-motion-slide-visible-once-bottom
       >
-        <div class="fill-primary social-svg pr-7" v-html="item.svg" />
-        Send message
+        <div
+          class="fill-primary social-svg pr-7"
+          v-html="gineralWarningCls == 'text-green-400' ? item.load : item.svg"
+        />
+        <span> Send message </span>
       </button>
     </form>
   </section>
@@ -111,6 +114,7 @@
 import { ref } from "vue";
 import { hireMeBtn } from "~/assets/constants";
 import emailjs from "@emailjs/browser";
+import { SlideBottom } from "~/assets/motions";
 
 const form = ref(null);
 const warningEmlCls = ref(null);
@@ -130,31 +134,31 @@ const messageTouched = ref(false); // Track if the message input has been blurre
 
 const handleEmailInput = () => {
   if (emailTouched.value) {
-    checkEml();
+    handelEmail();
   }
 };
 
 const handleEmailBlur = () => {
   if (from_email.value != "") {
     emailTouched.value = true;
-    checkEml();
+    handelEmail();
   }
 };
 
 const handleMessageInput = () => {
   if (messageTouched.value) {
-    checkMsg();
+    handelMessage();
   }
 };
 
 const handleMessageBlur = () => {
   if (message.value != "") {
     messageTouched.value = true;
-    checkMsg();
+    handelMessage();
   }
 };
 
-const checkEml = () => {
+const handelEmail = () => {
   if (from_email.value !== "") {
     if (!from_email.value.includes("@", 0)) {
       setElm(
@@ -174,7 +178,7 @@ const checkEml = () => {
   }
 };
 
-const checkMsg = () => {
+const handelMessage = () => {
   if (message.value !== "") {
     warningMsgCls.value = null;
     warningMsgTxt.value = null;
@@ -185,7 +189,7 @@ const checkMsg = () => {
 };
 
 const sendMail = () => {
-  if (from_email.value !== "" && message.value !== "") {
+  if (from_email.value != "" && message.value != "") {
     emailjs
       .sendForm(
         "service_38tp29a", // Replace with your service ID
@@ -194,27 +198,32 @@ const sendMail = () => {
         "mTYUXGNdV9K7Eca52" // Replace with your user ID
       )
       .then(
-        () => {
-          // setElm("text-green-400", "Your message has been sent successfully.");
+        (res) => {
+          setErr("text-green-400", "Your message has been sent successfully.");
 
-          gineralWarningCls.value = "text-green-400";
-          gineralWarningMsg.value = "Your message has been sent successfully.";
+          // gineralWarningCls.value = "text-green-400";
+          // gineralWarningMsg.value = "Your message has been sent successfully.";
           form.value.reset();
         },
-        () => {
-          // setElm(
-          //   "text-yellow-400",
-          //   "There was an error sending your message. Please try again later."
-          // );
+        (err) => {
+          setErr(
+            "text-yellow-400",
+            "There was an error sending your message. Please try again later."
+          );
 
-          gineralWarningCls.value = "text-yellow-400";
-          gineralWarningMsg.value =
-            "There was an error sending your message. Please try again later.";
+          // gineralWarningCls.value = "text-yellow-400";
+          // gineralWarningMsg.value =
+          //   "There was an error sending your message. Please try again later.";
+
+          setTimeout(() => {
+            gineralWarningCls.value = null;
+            gineralWarningMsg.value = null;
+          }, 3000);
         }
       );
   } else {
-    checkMsg();
-    checkEml();
+    handelMessage();
+    handelEmail();
   }
 };
 
@@ -222,11 +231,44 @@ const setElm = (color, text) => {
   warningEmlCls.value = color;
   warningEmlTxt.value = text;
 };
+
+const setErr = (color, text) => {
+  gineralWarningCls.value = color;
+  gineralWarningMsg.value = text;
+};
 </script>
 
 <style>
 .button {
   background-size: 200% 100%;
   color: #4adc7f49;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
