@@ -17,10 +17,11 @@ export const SlideBottom = {
   },
 
   leave: {
-    y: -10,
+    y: 10,
     opacity: 0,
     transition: {
       stiffness: 100,
+      ease: "easeInOut",
     },
   },
 };

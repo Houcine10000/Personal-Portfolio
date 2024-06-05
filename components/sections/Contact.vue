@@ -9,7 +9,7 @@
         <div class="line-shape"></div>
       </div>
 
-      <div class="relative z-0 w-full mb-10 group" v-motion="SlideBottom">
+      <div class="relative z-0 w-full mb-10 group" ref="dropdown2">
         <input
           type="email"
           name="from_email"
@@ -34,7 +34,6 @@
         <div
           v-if="warningEmlTxt"
           :class="`${warningEmlCls} pt-2 flex font-medium`"
-          v-motion="SlideBottom"
         >
           <Icon
             name="mdi-light:alert"
@@ -45,7 +44,7 @@
         </div>
       </div>
 
-      <div class="relative z-0 w-full group" v-motion="SlideBottom">
+      <div class="relative z-0 w-full group" ref="dropdown">
         <textarea
           cols="30"
           rows="1"
@@ -71,7 +70,6 @@
         <div
           v-if="warningMsgTxt"
           :class="`${warningMsgCls} pt-2 flex font-medium`"
-          v-motion="SlideBottom"
         >
           <Icon
             name="mdi-light:alert"
@@ -85,6 +83,7 @@
       <div
         v-if="gineralWarningMsg"
         :class="`${gineralWarningCls} contact-btn mt-10 ${gineralWarningCls === 'text-yellow-400' ? 'bg-error_secondary' : 'bg-succes_primary'}  text-sm font-light py-4 w-full`"
+        v-motion="SlideBottom"
       >
         <Icon
           :name="`${gineralWarningCls === 'text-yellow-400' ? 'mdi-light:information' : 'mdi-light:flash'}`"
@@ -93,6 +92,7 @@
 
         {{ gineralWarningMsg }}
       </div>
+
       <button
         type="submit"
         class="contact-btn"
@@ -115,6 +115,16 @@ import { ref } from "vue";
 import { hireMeBtn } from "~/assets/constants";
 import emailjs from "@emailjs/browser";
 import { SlideBottom } from "~/assets/motions";
+import autoAnimate from "@formkit/auto-animate";
+
+const dropdown = ref(); // we need a DOM node
+const dropdown2 = ref(); // we need a DOM node
+
+
+onMounted(() => {
+  autoAnimate(dropdown.value); // thats it!
+  autoAnimate(dropdown2.value); // thats it!
+});
 
 const form = ref(null);
 const warningEmlCls = ref(null);
