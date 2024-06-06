@@ -9,7 +9,7 @@
         <div class="line-shape"></div>
       </div>
 
-      <div class="relative z-0 w-full mb-10 group" ref="dropdown2">
+      <div class="relative z-0 w-full mb-10 group" ref="dropdown">
         <input
           type="email"
           name="from_email"
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="relative z-0 w-full group" ref="dropdown">
+      <div class="relative z-0 w-full group" ref="dropdown2">
         <textarea
           cols="30"
           rows="1"
@@ -111,7 +111,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { hireMeBtn } from "~/assets/constants";
 import emailjs from "@emailjs/browser";
 import { SlideBottom } from "~/assets/motions";
@@ -119,7 +118,6 @@ import autoAnimate from "@formkit/auto-animate";
 
 const dropdown = ref(); // we need a DOM node
 const dropdown2 = ref(); // we need a DOM node
-
 
 onMounted(() => {
   autoAnimate(dropdown.value); // thats it!

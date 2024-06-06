@@ -11,7 +11,7 @@ export default {
         error_primary: "#ff0e46",
         error_secondary: "#ffd00034",
 
-        succes_primary:"#26d26534",
+        succes_primary: "#26d26534",
 
         buttons_primary: "#00eaff",
         buttons_secondary: "#14B8A6",
