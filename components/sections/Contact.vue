@@ -168,18 +168,22 @@ const handleMessageBlur = () => {
 
 const handelEmail = () => {
   if (from_email.value !== "") {
-    if (!from_email.value.includes("@", 0)) {
-      setElm(
-        "text-error_primary",
-        `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`
-      );
-    } else if (from_email.value.slice(-1) === "@") {
-      setElm(
-        "text-error_primary",
-        `Please enter a part following '@'. '${from_email.value}' is incomplete.`
-      );
-    } else {
-      setElm("", "");
+    for (let i = 0; i < from_email.value.length; i++) {
+      if (!from_email.value.includes("@", 0)) {
+        setElm(
+          "text-error_primary",
+          `Please include an '@' in the email address. '${from_email.value}' is missing an '@'.`
+        );
+      } else if (from_email.value.slice(-1) === "@") {
+        setElm(
+          "text-error_primary",
+          `Please enter a part following '@'. '${from_email.value}' is incomplete.`
+        );
+      } else if (!/^[^@]+@\w+(\.\w+)+\w$/.test(from_email.value)) {
+        setElm("text-error_primary", `Please enter a valid email.`);
+      } else {
+        setElm("", "");
+      }
     }
   } else {
     setElm("text-error_primary", "Please fill out this field.");
