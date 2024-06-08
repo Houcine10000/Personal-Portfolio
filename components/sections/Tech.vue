@@ -1,5 +1,9 @@
 <template>
-  <div id="skils" class="section h-[70vh] flex flex-wrap justify-center gap-4">
+  <div
+    id="skils"
+    class="section h-[70vh] flex flex-wrap justify-center gap-4"
+    v-motion="SlideBottom"
+  >
     <div>
       <div class="text-center">
         <h1
@@ -46,5 +50,7 @@
 </template>
 
 <script setup>
+import { SlideBottom } from "~/assets/motions";
+
 import { technologies } from "~/assets/constants";
 </script>

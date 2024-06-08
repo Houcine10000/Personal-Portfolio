@@ -1,5 +1,5 @@
 <template>
-  <section class="section sm:pt-20 h-[60vh]" id="about">
+  <section class="section sm:pt-20 h-[60vh]" id="about" v-motion="SlideBottom">
     <div class="badg-box">
       <div class="badg">
         <svg
@@ -40,4 +40,5 @@
 </template>
 
 <script setup>
+import { SlideBottom } from "~/assets/motions";
 </script>

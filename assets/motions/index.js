@@ -1,28 +1,16 @@
 export const SlideBottom = {
   initial: {
-    y: 150,
+    y: 100,
     opacity: 0,
-    transition: {
-      stiffness: 100,
-    },
   },
 
-  enter: {
+  visibleOnce: {
     y: 0,
     opacity: 1,
     transition: {
-      stiffness: 100,
-      ease: "easeInOut",
       duration: 800,
-    },
-  },
+      ease: "ease",
 
-  leave: {
-    y: 10,
-    opacity: 0,
-    transition: {
-      stiffness: 100,
-      ease: "easeInOut",
     },
   },
 };
