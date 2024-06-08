@@ -1,15 +1,17 @@
 <template>
   <section class="section" id="contact">
-    <form ref="form" @submit.prevent="sendMail" class="max-w-lg mx-auto">
-      <div
-        class="text-3xl font-medium text-white relative h-20 mb-16"
-        v-motion-slide-visible-once-top
-      >
+    <form
+      ref="form"
+      @submit.prevent="sendMail"
+      class="max-w-lg mx-auto"
+      v-motion="SlideBottom"
+    >
+      <div class="text-3xl font-medium text-white relative h-20 mb-16">
         <span>Say hello</span>
         <div class="line-shape"></div>
       </div>
 
-      <div class="relative z-0 w-full mb-10 group" ref="dropdown">
+      <div class="relative z-0 w-full mb-10 group" ref="fade1">
         <input
           type="email"
           name="from_email"
@@ -44,7 +46,7 @@
         </div>
       </div>
 
-      <div class="relative z-0 w-full group" ref="dropdown2">
+      <div class="relative z-0 w-full group" ref="fade2">
         <textarea
           cols="30"
           rows="1"
@@ -83,7 +85,6 @@
       <div
         v-if="gineralWarningMsg"
         :class="`${gineralWarningCls} contact-btn mt-10 ${gineralWarningCls === 'text-yellow-400' ? 'bg-error_secondary' : 'bg-succes_primary'}  text-sm font-light py-4 w-full`"
-        v-motion="SlideBottom"
       >
         <Icon
           :name="`${gineralWarningCls === 'text-yellow-400' ? 'mdi-light:information' : 'mdi-light:flash'}`"
@@ -98,7 +99,6 @@
         class="contact-btn"
         v-for="(item, index) in hireMeBtn"
         :key="index"
-        v-motion-slide-visible-once-bottom
       >
         <div
           class="fill-primary social-svg pr-7"
@@ -116,12 +116,12 @@ import emailjs from "@emailjs/browser";
 import { SlideBottom } from "~/assets/motions";
 import autoAnimate from "@formkit/auto-animate";
 
-const dropdown = ref(); // we need a DOM node
-const dropdown2 = ref(); // we need a DOM node
+const fade1 = ref(); // we need a DOM node
+const fade2 = ref(); // we need a DOM node
 
 onMounted(() => {
-  autoAnimate(dropdown.value); // thats it!
-  autoAnimate(dropdown2.value); // thats it!
+  autoAnimate(fade1.value); // thats it!
+  autoAnimate(fade2.value); // thats it!
 });
 
 const form = ref(null);
@@ -213,19 +213,18 @@ const sendMail = () => {
         (res) => {
           setErr("text-green-400", "Your message has been sent successfully.");
 
-          // gineralWarningCls.value = "text-green-400";
-          // gineralWarningMsg.value = "Your message has been sent successfully.";
           form.value.reset();
+
+          setTimeout(() => {
+            gineralWarningCls.value = null;
+            gineralWarningMsg.value = null;
+          }, 3000);
         },
         (err) => {
           setErr(
             "text-yellow-400",
             "There was an error sending your message. Please try again later."
           );
-
-          // gineralWarningCls.value = "text-yellow-400";
-          // gineralWarningMsg.value =
-          //   "There was an error sending your message. Please try again later.";
 
           setTimeout(() => {
             gineralWarningCls.value = null;
@@ -253,34 +252,5 @@ const setErr = (color, text) => {
 <style>
 .button {
   background-size: 200% 100%;
-  color: #4adc7f49;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 </style>

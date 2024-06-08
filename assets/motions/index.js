@@ -1,6 +1,6 @@
 export const SlideBottom = {
   initial: {
-    y: -10,
+    y: 150,
     opacity: 0,
     transition: {
       stiffness: 100,
@@ -13,6 +13,7 @@ export const SlideBottom = {
     transition: {
       stiffness: 100,
       ease: "easeInOut",
+      duration: 800,
     },
   },
 
