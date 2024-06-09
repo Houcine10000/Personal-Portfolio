@@ -3,7 +3,7 @@
     <form
       ref="form"
       @submit.prevent="sendMail"
-      class="max-w-lg mx-auto"
+      class="max-w-xl mx-auto"
       v-motion="SlideBottom"
     >
       <div class="text-3xl font-medium text-white relative h-20 mb-16">
@@ -16,31 +16,23 @@
           type="email"
           name="from_email"
           v-model="from_email"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+          class="inputCnt peer"
           placeholder=" "
           @input="handleEmailInput"
           @blur="handleEmailBlur"
         />
 
-        <label
-          for="from_email"
-          class="font-light absolute text-md text-white/85 duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white/20 peer-focus:dark:text-white/60 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7"
-        >
-          Your email
-        </label>
+        <label for="from_email" class="labelCnt"> Your email </label>
 
         <div
-          :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
+          :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} button labelBtmBorder `"
         ></div>
 
         <div
           v-if="warningEmlTxt"
           :class="`${warningEmlCls} pt-2 flex font-medium`"
         >
-          <Icon
-            name="mdi-light:alert"
-            class="text-2xl font-semibold stroke-error_primary mr-1"
-          />
+          <Icon name="mdi-light:alert" class="iconCnt" />
 
           {{ warningEmlTxt }}
         </div>
@@ -52,31 +44,23 @@
           rows="1"
           v-model="message"
           name="message"
-          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+          class="inputCnt peer"
           placeholder=" "
           @input="handleMessageInput"
           @blur="handleMessageBlur"
         />
 
-        <label
-          for="message"
-          class="font-light absolute text-md text-white/85 duration-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-white/20 peer-focus:dark:text-white/60 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-7"
-        >
-          Message
-        </label>
+        <label for="message" class="labelCnt"> Message </label>
 
         <div
-          :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} to-50% button mt-3 bg-right-bottom peer-focus:bg-left-bottom transition-all ease-out duration-500 w-full h-[2.5px] bg-gradient-to-r `"
+          :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} button labelBtmBorder`"
         ></div>
 
         <div
           v-if="warningMsgTxt"
           :class="`${warningMsgCls} pt-2 flex font-medium`"
         >
-          <Icon
-            name="mdi-light:alert"
-            class="text-2xl font-semibold stroke-error_primary mr-1"
-          />
+          <Icon name="mdi-light:alert" class="iconCnt" />
 
           {{ warningMsgTxt }}
         </div>

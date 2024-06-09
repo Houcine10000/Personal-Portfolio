@@ -1,20 +1,17 @@
 <template>
-  <ul
-    class="nav-bar-ul"
-  >
+  <ul class="nav-bar-ul">
     <div class="nav-bar-li">
       <li
-        class="group pb-5 last:pb-0 tooltip tooltip-left w-full flex items-center justify-center cursor-pointer"
+        class="group mb-5 last:mb-0 tooltip tooltip-left w-full flex items-center justify-center cursor-pointer"
         v-for="item in navLinks"
         :key="item.id"
       >
-        <a
+        <nuxt-link
+          :to="`${item.id == 'contact' ? '/' + item.id : '/#' + item.id}`"
           class="social-svg sm:w-6 sm:h-6"
-          v-html="item.svg"
-          :data-tip="`${item.title}`"
-          :href="`#${item.id}`"
         >
-        </a>
+          <div v-html="item.svg" :data-tip="`${item.title}`" />
+        </nuxt-link>
       </li>
     </div>
   </ul>

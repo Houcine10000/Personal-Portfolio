@@ -4,6 +4,6 @@
     <LazySectionsAbout />
     <LazySectionsTech />
     <LazySectionsProjects />
-    <LazySectionsContact />
+    <!-- <LazySectionsContact /> -->
   </div>
 </template>
