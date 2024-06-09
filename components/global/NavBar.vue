@@ -20,3 +20,10 @@
 <script setup>
 import { navLinks } from "~/assets/constants";
 </script>
+
+<style scoped>
+.router-link-active,
+.router-link-exact-active {
+  @apply fill-buttons_primary;
+}
+</style>
