@@ -7,10 +7,14 @@
         :key="item.id"
       >
         <nuxt-link
-          :to="`${item.id == 'contact' ? '/' + item.id : '/#' + item.id}`"
+          :to="`${item.id == 'contact' ? '/' + item.id : '/' + item.id}`"
           class="social-svg sm:w-6 sm:h-6"
         >
-          <div v-html="item.svg" :data-tip="`${item.title}`" />
+          <div
+            v-html="item.svg"
+            :data-tip="`${item.title}`"
+            :class="`${item.id === $route.hash || item.id === $route.name ? 'fill-buttons_primary' : ''}`"
+          />
         </nuxt-link>
       </li>
     </div>
@@ -21,9 +25,4 @@
 import { navLinks } from "~/assets/constants";
 </script>
 
-<style scoped>
-.router-link-active,
-.router-link-exact-active {
-  @apply fill-buttons_primary;
-}
-</style>
+<style scoped></style>
