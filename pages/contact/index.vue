@@ -6,7 +6,7 @@
       class="max-w-xl mx-auto"
       v-motion="SlideBottom"
     >
-      <div class="text-3xl font-medium text-white relative h-20 mb-16">
+      <div class="text-4xl font-medium text-white relative h-20 mb-16">
         <span>Say hello</span>
         <div class="line-shape"></div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link href="#contact" class="hireMe-btn">
+  <nuxt-link href="contact" class="hireMe-btn">
     <span
       class="flex items-center"
       v-for="(item, index) in hireMeBtn"

@@ -19,8 +19,8 @@
       </li>
     </div>
   </ul> -->
-  <ul class="h-full flex flex-col justify-between items-center py-12">
-    <li class="group py-5 flex h-fit flex-col items-center">
+  <ul class="h-[80%] flex flex-col justify-between items-center">
+    <li class="group flex h-fit flex-col items-center">
       <div
         class="mb-16 rotate-90 flex justify-center text-md font-semibold tracking-wider"
         v-for="item in navLinks"
@@ -28,18 +28,30 @@
       >
         <nuxt-link
           :to="`${item.id == 'contact' ? '/' + item.id : '/' + item.id}`"
-          :class="`${item.id === $route.hash || item.id === $route.name ? 'active' : 'notActive'}`"
+          :class="`${item.id === $route.hash || item.id === $route.name ? 'active' : 'notActive'} text-slate-400`"
         >
           {{ item.title }}
         </nuxt-link>
       </div>
     </li>
 
-    <div class="social">test</div>
+    <div class="w-full h-16 flex flex-col items-center">
+      <NuxtLink
+        v-for="(item, index) in socialBtn"
+        :key="index"
+        :to="`${item.href}`"
+        target="_blank"
+        class="group p-3"
+      >
+        <span class="" v-html="item.svg" />
+      </NuxtLink>
+    </div>
   </ul>
 </template>
 
 <script setup>
+import { socialBtn } from "~/assets/constants";
+
 import { navLinks } from "~/assets/constants";
 </script>
 

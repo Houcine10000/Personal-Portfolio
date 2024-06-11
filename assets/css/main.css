@@ -21,21 +21,16 @@
 
 @layer components {
   .social-btn {
-    @apply border-2 relative ease-in-out duration-500 border-slate-700 hover:border-buttons_primary px-3 py-3 rounded-full cursor-pointer;
+    @apply border-2 relative ease-in-out duration-500 border-slate-400 hover:border-buttons_primary px-3 py-3 rounded-full cursor-pointer;
   }
-  /* .social-btn::before{
-    @apply content-[''] absolute top-0 left-0 w-full h-full rounded-full bg-buttons_primary ease-in-out duration-500 scale-90 -z-10;
-  }
-  .social-btn:hover::before{
-    @apply scale-110 shadow-[0_0_15px_#00eaff];
-  } */
+  
   .social-btn:hover{
     @apply  shadow-[0_0_5px_#00eaff];
     /* text-shadow: 0 0 5px #00eaff; */
     }
 
   .social-svg {
-    @apply fill-slate-700 ease-in-out duration-300 group-hover:fill-buttons_primary w-5 h-5;
+    @apply fill-slate-400 ease-in-out duration-500 group-hover:fill-buttons_primary w-5 h-5;
   }
 
   .hireMe-btn {
