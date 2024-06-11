@@ -28,7 +28,7 @@
       >
         <nuxt-link
           :to="`${item.id == 'contact' ? '/' + item.id : '/' + item.id}`"
-          :class="`${item.id === $route.hash || item.id === $route.name ? 'text-buttons_primary' : ''}`"
+          :class="`${item.id === $route.hash || item.id === $route.name ? 'active' : 'notActive'}`"
         >
           {{ item.title }}
         </nuxt-link>
@@ -44,23 +44,28 @@ import { navLinks } from "~/assets/constants";
 </script>
 
 <style scoped>
-a::after {
+a.active::before,
+a.notActive::after {
   content: "";
   position: absolute;
   width: 0;
-  height: 4px; /* Adjust the thickness of the line */
+  height: 4px;
   left: 0;
   bottom: 10px;
-  background-color: #00eaff; /* Change the color as needed */
+  background-color: #00eaff;
   transition: width 0.3s ease-in-out;
 }
 
-a:hover::after {
-  animation: slideRight 0.3s forwards; /* Adjust the duration of the animation */
+a.active::before {
+  animation: slideRight 0s forwards;
+}
+a.notActive:hover::after {
+  animation: slideRight 0.3s forwards;
 }
 
-a:not(:hover)::after {
-  animation: slideLeft 0.3s forwards; /* Adjust the duration of the animation */
+a:not(.active)::before,
+a.notActive:not(:hover)::after {
+  animation: slideLeft 0.3s forwards;
 }
 
 @keyframes slideLeft {
