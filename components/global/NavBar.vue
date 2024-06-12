@@ -52,7 +52,6 @@
 
 <script setup>
 import { socialBtn } from "~/assets/constants";
-
 import { navLinks } from "~/assets/constants";
 </script>
 
