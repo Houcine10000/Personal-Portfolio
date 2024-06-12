@@ -19,6 +19,7 @@
       </li>
     </div>
   </ul> -->
+
   <ul class="h-[80%] flex flex-col justify-between items-center">
     <li class="group flex h-fit flex-col items-center">
       <div
@@ -27,7 +28,7 @@
         :key="item.id"
       >
         <nuxt-link
-          :to="`${item.id == 'contact' ? '/' + item.id : '/' + item.id}`"
+          :to="`${'/' + item.id}`"
           :class="`${item.id === $route.hash || item.id === $route.name ? 'active' : 'notActive'} text-slate-400`"
         >
           {{ item.title }}
@@ -68,9 +69,7 @@ a.notActive::after {
   transition: width 0.3s ease-in-out;
 }
 
-a.active::before {
-  animation: slideRight 0s forwards;
-}
+a.active::before,
 a.notActive:hover::after {
   animation: slideRight 0.3s forwards;
 }

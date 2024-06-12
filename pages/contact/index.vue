@@ -1,9 +1,12 @@
 <template>
-  <section class="section" id="contact">
+  <section
+    class="h-full w-screen flex items-center justify-center"
+    id="contact"
+  >
     <form
       ref="form"
       @submit.prevent="sendMail"
-      class="max-w-xl mx-auto"
+      class="w-[40%]"
       v-motion="SlideBottom"
     >
       <div class="text-4xl font-medium text-white relative h-20 mb-16">
