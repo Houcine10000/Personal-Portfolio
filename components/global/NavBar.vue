@@ -68,7 +68,9 @@ a.notActive::after {
   transition: width 0.3s ease-in-out;
 }
 
-a.active::before,
+a.active::before{
+  animation: slideRight 0s forwards;
+}
 a.notActive:hover::after {
   animation: slideRight 0.3s forwards;
 }

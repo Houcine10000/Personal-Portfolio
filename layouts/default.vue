@@ -8,15 +8,15 @@
     </div>
 
     <!-- Main content -->
-    <main
-      :class="`col-span-11  lg:col-span-7`"
-    >
+    <main :class="`col-span-11  lg:col-span-7`">
       <slot />
     </main>
 
     <!-- Right side Menu -->
     <div class="col-span-1 h-screen">
-      <NavBar :class="`fixed top-[50%] -translate-y-[50%]`" />
+      <NavBar
+        :class="`fixed top-[50%] -translate-y-[50%] right-4 md:right-auto`"
+      />
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <form
       ref="form"
       @submit.prevent="sendMail"
-      class="w-[40%]"
+      class="w-[75%] sm:w-[60%] lg:w-[40%]"
       v-motion="SlideBottom"
     >
       <div class="text-4xl font-medium text-white relative h-20 mb-16">
