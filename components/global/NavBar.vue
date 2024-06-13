@@ -1,29 +1,10 @@
 <template>
-  <!-- <ul class="nav-bar-ul">
-    <div class="nav-bar-li">
-      <li
-        class="group mb-5 last:mb-0 tooltip tooltip-left w-full flex items-center justify-center cursor-pointer"
-        v-for="item in navLinks"
-        :key="item.id"
-      >
-        <nuxt-link
-          :to="`${item.id == 'contact' ? '/' + item.id : '/' + item.id}`"
-          class="social-svg sm:w-6 sm:h-6"
-        >
-          <div
-            v-html="item.svg"
-            :data-tip="`${item.title}`"
-            :class="`${item.id === $route.hash || item.id === $route.name ? 'fill-buttons_primary' : ''}`"
-          />
-        </nuxt-link>
-      </li>
-    </div>
-  </ul> -->
-
-  <ul class="h-[80%] flex flex-col justify-between items-center">
-    <li class="group flex h-fit flex-col items-center">
+  <ul class="h-full py-16 flex flex-col justify-between items-center">
+    <li
+      class="group h-[80%] pb-10 pt-3 flex flex-col items-center justify-between"
+    >
       <div
-        class="mb-16 rotate-90 flex justify-center text-md font-semibold tracking-wider"
+        class="-rotate-90 w-full text-center text-md font-semibold tracking-wider"
         v-for="item in navLinks"
         :key="item.id"
       >
@@ -36,7 +17,7 @@
       </div>
     </li>
 
-    <div class="w-full h-16 flex flex-col items-center">
+    <div class="w-full h-16 flex flex-col items-center justify-center">
       <NuxtLink
         v-for="(item, index) in socialBtn"
         :key="index"
@@ -68,36 +49,36 @@ a.notActive::after {
   transition: width 0.3s ease-in-out;
 }
 
-a.active::before{
-  animation: slideRight 0s forwards;
+a.active::before {
+  animation: slideLeft 0s forwards;
 }
 a.notActive:hover::after {
-  animation: slideRight 0.3s forwards;
+  animation: slideLeft 0.3s forwards;
 }
 
 a:not(.active)::before,
 a.notActive:not(:hover)::after {
-  animation: slideLeft 0.3s forwards;
-}
-
-@keyframes slideLeft {
-  from {
-    left: 0;
-    width: 100%;
-  }
-  to {
-    left: 100%;
-    width: 0;
-  }
+  animation: slideRight 0.3s forwards;
 }
 
 @keyframes slideRight {
   from {
+    right: 0;
+    width: 100%;
+  }
+  to {
     right: 100%;
     width: 0;
   }
+}
+
+@keyframes slideLeft {
+  from {
+    left: 100%;
+    width: 0;
+  }
   to {
-    right: 0;
+    left: 0;
     width: 100%;
   }
 }

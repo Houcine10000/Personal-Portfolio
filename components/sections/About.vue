@@ -1,5 +1,5 @@
 <template>
-  <section class="section sm:pt-20 h-[60vh]" id="about" v-motion="SlideBottom">
+  <section class="section sm:pt-20 h-[100vh]" id="about" v-motion="SlideBottom">
     <div class="badg-box">
       <div class="badg">
         <svg
@@ -36,6 +36,8 @@
         <strong>Tailwind CSS</strong>.
       </p>
     </div>
+
+    <CardInfo />
   </section>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div
     id="skils"
-    class="section h-[70vh] flex flex-wrap justify-center gap-4"
+    class="section h-[100vh] flex flex-wrap items-center justify-center gap-4"
     v-motion="SlideBottom"
   >
     <div>

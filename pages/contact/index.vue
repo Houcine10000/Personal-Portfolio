@@ -1,5 +1,5 @@
 <template>
-  <section class="h-full flex items-center justify-center" id="contact">
+  <section class="h-screen flex items-center justify-center" id="contact">
     <form
       ref="form"
       @submit.prevent="sendMail"
@@ -100,9 +100,9 @@ import emailjs from "@emailjs/browser";
 import { SlideBottom } from "~/assets/motions";
 import autoAnimate from "@formkit/auto-animate";
 
-definePageMeta({
-  layout: "custom",
-});
+// definePageMeta({
+//   layout: "custom",
+// });
 
 const fade1 = ref(); // we need a DOM node
 const fade2 = ref(); // we need a DOM node
