@@ -9,8 +9,8 @@
         :key="item.id"
       >
         <nuxt-link
-          :to="`${'/' + item.id}`"
-          :class="`${item.id === $route.hash || item.id === $route.name ? 'active' : 'notActive'} text-slate-400`"
+          :to="`/${item.id}`"
+          :class="{ active: isActive(item), notActive: !isActive(item) }"
         >
           {{ item.title }}
         </nuxt-link>
@@ -31,9 +31,18 @@
   </ul>
 </template>
 
+
 <script setup>
-import { socialBtn } from "~/assets/constants";
-import { navLinks } from "~/assets/constants";
+import { useRoute } from "vue-router";
+import { socialBtn, navLinks } from "~/assets/constants";
+
+// Get the current route
+const route = useRoute();
+
+// Function to check if the link is active
+const isActive = (item) => {
+  return item.id === route.hash.substring(1) || item.id === route.name;
+};
 </script>
 
 <style scoped>
