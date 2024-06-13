@@ -10,7 +10,21 @@
     </main>
 
     <div class="col-span-1 py-10 flex items-start justify-center">
-      <div class="text-center p-4 clipath hover:bg-white/5 cursor-pointer transition-all ease-out duration-300 ">sun</div>
+      <div
+        @click="toggleDark()"
+        class="text-center p-3 clipath hover:bg-white/5 cursor-pointer transition-all ease-out duration-300"
+      >
+        <Icon
+        class="h-8 w-8"
+          :name="`${isDark ? 'heroicons-solid:moon' : 'heroicons-solid:sun'}`"
+        />
+      </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { useDark, useToggle } from "#imports";
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+</script>

@@ -32,6 +32,4 @@
 }
 </style>
 
-<script setup>
-import { SlideBottom } from "./assets/motions";
-</script>
+<script setup></script>
