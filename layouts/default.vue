@@ -27,46 +27,48 @@
 
 <script setup>
 // Use refs for reactivity
-const isDark = ref(false);
+const isDark = ref(null);
 
-useHead({
-  script: [
-    {
-      type: "text/javascript",
-      innerHTML: `
-        (function() {
-          const isDark = localStorage.getItem('isDark') === 'true';
-          if (isDark) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        })();
-      `,
-    },
-  ],
-});
+// useHead({
+//   script: [
+//     {
+//       type: "text/javascript",
+//       innerHTML: `
+//         (function() {
+//           const isDark = localStorage.getItem('isDark') === 'true';
+//           if (isDark) {
+//             document.documentElement.classList.add('dark');
+//           } else {
+//             document.documentElement.classList.remove('dark');
+//           }
+//         })();
+//       `,
+//     },
+//   ],
+// });
 
 // Function to toggle dark mode
 const toggleDarkMode = () => {
-  isDark.value = !isDark.value;
+  // isDark.value = !isDark.value;
   localStorage.setItem("isDark", isDark.value);
   document.documentElement.classList.toggle("dark", isDark.value);
 };
 
 // Watch for changes in dark mode state and update local storage
-watch(isDark, (newValue) => {
-  localStorage.setItem("isDark", newValue);
-});
+// watch(isDark, (newValue) => {
+//   localStorage.setItem("isDark", newValue);
+//   isDark.value = newValue;
+//   console.log(isDark.value);
+// });
 
 // On component mount, check local storage for dark mode preference
-onBeforeMount(() => {
-  if (localStorage.getItem("isDark") === "true") {
-    isDark.value = true;
-    document.documentElement.classList.add("dark");
-  } else {
-    isDark.value = false;
-    document.documentElement.classList.remove("dark");
-  }
-});
+// onMounted(() => {
+//   if (localStorage.getItem("isDark") === "true") {
+//     isDark.value = true;
+//     document.documentElement.classList.add("dark");
+//   } else {
+//     isDark.value = false;
+//     document.documentElement.classList.remove("dark");
+//   }
+// });
 </script>
