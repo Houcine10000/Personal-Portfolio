@@ -25,28 +25,27 @@
   </div>
 </template>
 
-
 <script setup>
 // Use refs for reactivity
 const isDark = ref(false);
 
-useHead({
-  script: [
-    {
-      type: 'text/javascript',
-      innerHTML: `
-        (function() {
-          const isDark = localStorage.getItem('isDark') === 'true';
-          if (isDark) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        })();
-      `,
-    },
-  ],
-});
+// useHead({
+//   script: [
+//     {
+//       type: "text/javascript",
+//       innerHTML: `
+//         (function() {
+//           const isDark = localStorage.getItem('isDark') === 'true';
+//           if (isDark) {
+//             document.documentElement.classList.add('dark');
+//           } else {
+//             document.documentElement.classList.remove('dark');
+//           }
+//         })();
+//       `,
+//     },
+//   ],
+// });
 
 // Function to toggle dark mode
 const toggleDarkMode = () => {
@@ -57,14 +56,6 @@ const toggleDarkMode = () => {
 
 // On component mount, check local storage for dark mode preference
 onMounted(() => {
-  const storedIsDark = localStorage.getItem("isDark");
-  if (storedIsDark === "true") {
-    isDark.value = true;
-    document.documentElement.classList.add("dark");
-  } else {
-    isDark.value = false;
-    document.documentElement.classList.remove("dark");
-  }
+  isDark.value = localStorage.getItem("isDark") === "true";
 });
 </script>
-
