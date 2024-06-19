@@ -29,24 +29,6 @@
 // Use refs for reactivity
 const isDark = ref(false);
 
-// useHead({
-//   script: [
-//     {
-//       type: "text/javascript",
-//       innerHTML: `
-//         (function() {
-//           const isDark = localStorage.getItem('isDark') === 'true';
-//           if (isDark) {
-//             document.documentElement.classList.add('dark');
-//           } else {
-//             document.documentElement.classList.remove('dark');
-//           }
-//         })();
-//       `,
-//     },
-//   ],
-// });
-
 // Function to toggle dark mode
 const toggleDarkMode = () => {
   isDark.value = !isDark.value;
