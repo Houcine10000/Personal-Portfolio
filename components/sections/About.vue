@@ -1,6 +1,10 @@
 <template>
-  <section class="section sm:pt-20 h-[100vh]" id="about" v-motion="SlideBottom">
-    <div class="badg-box">
+  <section
+    class="section h-[110vh] px-36 sm:pt-20 flex gap-16"
+    id="about"
+    v-motion="SlideBottom"
+  >
+    <!-- <div class="badg-box">
       <div class="badg">
         <svg
           class="fill-[#ffff] mr-2"
@@ -15,17 +19,17 @@
         </svg>
         ABOUT
       </div>
-    </div>
+    </div> -->
 
-    <div class="pt-12">
+    <div class="">
       <h1
-        class="text-[3rem] xs:text-[3.5rem] sm:text-[4rem] font-bold text-white pb-10"
+        class="text-[3rem] xs:text-[3.5rem] sm:text-[2.5rem] font-bold text-white pb-10"
       >
-        Overview.
+        Hi there.
       </h1>
 
       <p
-        class="lg:text-xl xs:text-[1.2rem] text-slate-400 font-light leading-relaxed lg:w-full"
+        class="lg:text-[22px] leading-relaxed xs:text-[1.2rem] text-slate-400 font-light"
       >
         Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer based
         in <strong>Morocco</strong>. My passion is to create elegant and
@@ -37,7 +41,9 @@
       </p>
     </div>
 
-    <CardInfo />
+    <div class="flex items-end mt-14">
+      <CardInfo />
+    </div>
   </section>
 </template>
 

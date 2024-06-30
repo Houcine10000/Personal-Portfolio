@@ -1,6 +1,6 @@
 <template>
-  <section id="home" class="section">
-    <div class="badg-box">
+  <section id="home" class="section px-10 flex items-center">
+    <!-- <div class="badg-box">
       <div class="badg">
         <svg
           class="fill-text_primary mr-2"
@@ -15,11 +15,11 @@
         </svg>
         INTRODUCE
       </div>
-    </div>
+    </div> -->
 
-    <div class="py-14">
+    <div class="">
       <p
-        class="text-text_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[3.4rem] xl:text-[3.7rem] font-light leading-tight"
+        class="text-text_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[3.4rem] xl:text-[4.5rem] font-light leading-tight"
       >
         Say Hi from
         <span
@@ -29,13 +29,13 @@
         precision.
       </p>
 
-      <p class="pt-12 text-white/55 font-light">
+      <p class="pt-10 text-white/55 font-light">
         I create and develop a clean UI/UX for my users
       </p>
-    </div>
 
-    <div class="flex sm:justify-end items-center">
-      <ChunkDown />
+      <div class="flex sm:justify-end items-center pt-16">
+        <ChunkDown />
+      </div>
     </div>
   </section>
 </template>

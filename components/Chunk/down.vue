@@ -4,7 +4,7 @@
       class="flex flex-col items-center justify-center w-44 h-44 border rounded-full border-white/15"
     >
       <p
-        :class="`${circularText ? 'animate-spin' : ''} font-normal uppercase text-[18px]`"
+        :class="`${circularText ? 'animate-border-spin' : ''} font-normal uppercase text-[18px]`"
         ref="circularText"
       >
         my projects • my projects •
