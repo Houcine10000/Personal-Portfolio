@@ -1,6 +1,6 @@
 <template>
   <section
-    class="section h-[110vh] px-36 sm:pt-20 flex gap-16"
+    class=" section px-28 py-0 bg-teal-700 h-[110vh] flex gap-16"
     id="about"
     v-motion="SlideBottom"
   >
