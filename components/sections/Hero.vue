@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="section px-10 flex items-center">
+  <section id="home" class="section flex items-center">
     <!-- <div class="badg-box">
       <div class="badg">
         <svg

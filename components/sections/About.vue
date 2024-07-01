@@ -1,6 +1,6 @@
 <template>
   <section
-    class=" section px-28 py-0 bg-teal-700 h-[110vh] flex gap-16"
+    class=" section h-full lg:h-[120vh] flex xs:flex-col lg:flex-row gap-10"
     id="about"
     v-motion="SlideBottom"
   >
@@ -41,7 +41,7 @@
       </p>
     </div>
 
-    <div class="flex items-end mt-14">
+    <div class="lg:flex lg:items-end lg:mt-14">
       <CardInfo />
     </div>
   </section>

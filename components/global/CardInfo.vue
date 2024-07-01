@@ -1,5 +1,5 @@
 <template>
-  <div class="card-wrapper lg:w-[22rem] w-[90%] h-[85%] md:w-[80%]">
+  <div class="card-wrapper lg:w-[30rem] h-[42rem]">
     <div class="card-content card rounded-none px-8">
       <div class="flex flex-row justify-between px-0 card-body">
         <div class="text-4xl font-bold flex gap-1">
