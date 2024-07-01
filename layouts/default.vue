@@ -9,13 +9,77 @@
       >
         <strong class="text-4xl font-extrabold">H</strong>
 
-        <div class="">Menu</div>
+        <!-- -------|> Menu <|-------- -->
+
+        <label
+          class="swap swap-rotate text-center p-3 clipath hover:bg-white/5 cursor-pointer transition-all ease-out duration-300"
+        >
+          <input
+            @click="toggleMenu"
+            type="checkbox"
+            class="theme-controller"
+            v-model="isMenu"
+            value="synthwave"
+          />
+
+          <!-- Berger menu icon -->
+
+          <svg
+            class="swap-off h-10 w-10 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 6h18c.552 0 1-.448 1-1s-.448-1-1-1H3c-.552 0-1 .448-1 1s.448 1 1 1zm18 5H3c-.552 0-1 .448-1 1s.448 1 1 1h12c.552 0 1-.448 1-1s-.448-1-1-1zm0 6H3c-.552 0-1 .448-1 1s.448 1 1 1h18c.552 0 1-.448 1-1s-.448-1-1-1z"
+            />
+          </svg>
+
+          <!-- Close icon -->
+
+          <svg
+            class="swap-on h-10 w-10 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18.36 6.64a1 1 0 00-1.41 0L12 11.59 7.05 6.64a1 1 0 10-1.41 1.41L10.59 13l-5.9 5.0a1 1 0 101.41 1.41L12 14.41l4.95 4.95a1 1 0 001.41-1.41L13.41 13l4.95-4.95a1 1 0 000-1.41z"
+            />
+          </svg>
+        </label>
       </div>
     </div>
 
     <!-- Main content -->
     <main class="col-span-12 xs:col-span-9">
-      <slot />
+      <div class="drawer drawer-overlay">
+        <input
+          id="my-drawer-4"
+          type="checkbox"
+          v-model="isMenu"
+          class="drawer-toggle hidden"
+        />
+        <div class="drawer-content">
+          <!-- Page content here -->
+          <slot />
+        </div>
+        <div
+          class="drawer-side fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-300 ease-in-out"
+          :class="{ 'translate-y-0': isMenu }"
+        >
+          <label
+            for="my-drawer-4"
+            aria-label="close sidebar"
+            class="drawer-overlay"
+          ></label>
+          <ul
+            class="menu bg-base-200 text-base-content min-h-screen w-full p-4"
+          >
+            <!-- Sidebar content here -->
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
+          </ul>
+        </div>
+      </div>
     </main>
 
     <!-- Toggle Dark Mode Button Section -->
@@ -66,6 +130,7 @@
 <script setup>
 // Use refs for reactivity
 const isDark = ref(false);
+const isMenu = ref(false);
 
 // Function to toggle dark mode
 const toggleDarkMode = () => {
@@ -74,8 +139,19 @@ const toggleDarkMode = () => {
   document.documentElement.classList.toggle("dark", isDark.value);
 };
 
+// Function to toggle dark mode
+const toggleMenu = () => {
+  isMenu.value = !isMenu.value;
+};
+
 // On component mount, check local storage for dark mode preference
 onMounted(() => {
   isDark.value = localStorage.getItem("isDark") === "true";
 });
 </script>
+
+<style>
+.drawer-toggle:checked ~ .drawer-side {
+  transform: translateY(0);
+}
+</style>
