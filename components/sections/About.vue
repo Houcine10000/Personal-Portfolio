@@ -1,6 +1,6 @@
 <template>
   <section
-    class=" section h-full lg:h-[120vh] flex xs:flex-col lg:flex-row gap-10"
+    class=" section h-full md:h-[120vh] flex flex-col md:flex-row gap-10 xl:gap-20"
     id="about"
     v-motion="SlideBottom"
   >
@@ -29,7 +29,7 @@
       </h1>
 
       <p
-        class="lg:text-[22px] leading-relaxed xs:text-[1.2rem] text-slate-400 font-light"
+        class="leading-relaxed text-[22px] text-slate-400 font-normal"
       >
         Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer based
         in <strong>Morocco</strong>. My passion is to create elegant and
@@ -41,7 +41,7 @@
       </p>
     </div>
 
-    <div class="lg:flex lg:items-end lg:mt-14">
+    <div class="md:flex md:items-end md:mt-14">
       <CardInfo />
     </div>
   </section>

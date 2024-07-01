@@ -19,7 +19,7 @@
 
     <div class="">
       <p
-        class="text-text_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[3.4rem] xl:text-[4.5rem] font-light leading-tight"
+        class="text-text_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[3.5rem] xl:text-[4.5rem] font-light leading-tight"
       >
         Say Hi from
         <span
