@@ -63,8 +63,7 @@
           <slot />
         </div>
         <div
-          class="drawer-side fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-300 ease-in-out"
-          :class="{ 'translate-y-0': isMenu }"
+          class="drawer-side fixed top-0 left-0 right-0 w-full transform transition-transform duration-300 ease-in-out"
         >
           <label
             for="my-drawer-4"
@@ -72,12 +71,46 @@
             class="drawer-overlay"
           ></label>
           <ul
-            class="menu bg-base-200 text-base-content min-h-screen w-full p-4"
+            class="bg-base-200 h-screen w-full px-16 flex items-center justify-center"
           >
             <!-- Sidebar content here -->
-            <li><a>Sidebar Item 1</a></li>
-            <li><a>Sidebar Item 2</a></li>
+            <li class="flex flex-col w-full">
+              <div
+                v-for="item in navLinks"
+                :key="item.id"
+                class="py-8 text-2xl relative"
+              >
+                <nuxt-link
+                  :to="`/${item.id}`"
+                  :class="{
+                    active: isActive(item),
+                    notActive: !isActive(item),
+                  }"
+                  class="absolute left-0 top-0 w-full h-full flex items-center justify-center"
+                >
+                  {{ item.title }}
+                </nuxt-link>
+              </div>
+            </li>
           </ul>
+
+          <div
+            class="absolute bottom-0 w-full flex justify-between px-10 py-10"
+          >
+            <div class="flex">
+              <NuxtLink
+                v-for="(item, index) in socialBtn"
+                :key="index"
+                :to="`${item.href}`"
+                target="_blank"
+                class="group p-3"
+              >
+                <span class="" v-html="item.svg" />
+              </NuxtLink>
+            </div>
+            
+            <div class="">Toggle mode</div>
+          </div>
         </div>
       </div>
     </main>
@@ -128,6 +161,11 @@
 </template>
 
 <script setup>
+import { useRoute } from "vue-router";
+import { socialBtn, navLinks } from "~/assets/constants";
+
+const route = useRoute();
+
 // Use refs for reactivity
 const isDark = ref(false);
 const isMenu = ref(false);
@@ -148,10 +186,61 @@ const toggleMenu = () => {
 onMounted(() => {
   isDark.value = localStorage.getItem("isDark") === "true";
 });
+
+// Function to check if the link is active
+const isActive = (item) => {
+  return item.id === route.hash.substring(1) || item.id === route.name;
+};
 </script>
 
 <style>
 .drawer-toggle:checked ~ .drawer-side {
   transform: translateY(0);
+}
+
+a.active::before,
+a.notActive::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 0;
+  bottom: 28px;
+  background-color: #00eaff;
+  transition: width 0.4s ease-in-out;
+}
+
+a.active::before {
+  animation: slideLeft 0s forwards;
+}
+a.notActive:hover::after {
+  animation: slideLeft 0.4s forwards;
+}
+
+a:not(.active)::before,
+a.notActive:not(:hover)::after {
+  animation: slideRight 0.4s forwards;
+}
+
+@keyframes slideRight {
+  from {
+    right: 0;
+    width: 100%;
+  }
+  to {
+    right: 100%;
+    width: 0;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    left: 100%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
 }
 </style>
