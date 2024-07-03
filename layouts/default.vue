@@ -60,10 +60,6 @@
           class="drawer-toggle hidden"
         />
 
-        <div class="drawer-content">
-          <!-- Page content here -->
-        </div>
-
         <div
           class="drawer-side fixed top-0 left-0 right-0 w-full transform transition-transform duration-300 ease-in-out"
         >
@@ -73,7 +69,7 @@
             class="drawer-overlay"
           ></label>
           <ul
-            class="bg-base-200 h-screen w-full px-16 flex items-center justify-center"
+            class="h-screen drawer-bg w-full px-16 flex items-center justify-center"
           >
             <!-- Sidebar content here -->
             <li class="flex flex-col w-full">
@@ -247,6 +243,11 @@ onUnmounted(() => {
 </script>
 
 <style>
+.drawer-bg {
+  background-color: rgba(57, 57, 57, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
 @media (min-width: 651px) {
   .drawer {
     display: none;
