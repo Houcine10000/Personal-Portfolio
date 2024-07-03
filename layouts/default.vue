@@ -52,7 +52,7 @@
     <!-- Main content -->
 
     <main class="col-span-12 xs:col-span-9">
-      <div class="drawer drawer-overlay">
+      <div v-if="shouldShowDrawer" class="drawer drawer-overlay z-10">
         <input
           id="my-drawer-4"
           type="checkbox"
@@ -62,7 +62,6 @@
 
         <div class="drawer-content">
           <!-- Page content here -->
-          <slot />
         </div>
 
         <div
@@ -79,6 +78,7 @@
             <!-- Sidebar content here -->
             <li class="flex flex-col w-full">
               <div
+                @click="isMenu = false"
                 v-for="item in navLinks"
                 :key="item.id"
                 class="py-8 text-2xl relative"
@@ -97,8 +97,9 @@
             </li>
           </ul>
 
+          <!-- Socials -->
           <div
-            class="absolute bottom-0 w-full flex  justify-between px-10 py-10"
+            class="absolute bottom-0 w-full flex justify-between px-10 py-10"
           >
             <div class="flex">
               <NuxtLink
@@ -112,9 +113,8 @@
               </NuxtLink>
             </div>
 
-            <div
-              class="flex items-start justify-center"
-            >
+            <!-- Theme Mode -->
+            <div class="flex justify-center">
               <label
                 class="swap swap-rotate text-center p-3 clipath hover:bg-white/5 cursor-pointer transition-all ease-out duration-300 fixed"
               >
@@ -145,7 +145,7 @@
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                    d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05A1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
                   />
                 </svg>
               </label>
@@ -153,6 +153,8 @@
           </div>
         </div>
       </div>
+
+      <slot />
     </main>
 
     <div class="col-span-1 py-10 hidden xs:flex items-start justify-center">
@@ -200,6 +202,7 @@ import { socialBtn, navLinks } from "~/assets/constants";
 
 const route = useRoute();
 const isDark = ref(false);
+const isMenu = ref(false);
 
 // Function to toggle dark mode
 const toggleDarkMode = () => {
@@ -211,10 +214,10 @@ const toggleDarkMode = () => {
 // On component mount, check local storage for dark mode preference
 onMounted(() => {
   isDark.value = localStorage.getItem("isDark") === "true";
-});
 
-// Use refs for reactivity
-const isMenu = ref(false);
+  updateDrawerVisibility();
+  window.addEventListener("resize", updateDrawerVisibility);
+});
 
 // Function to toggle dark mode
 const toggleMenu = () => {
@@ -225,9 +228,31 @@ const toggleMenu = () => {
 const isActive = (item) => {
   return item.id === route.hash.substring(1) || item.id === route.name;
 };
+
+const shouldShowDrawer = ref(false);
+
+const updateDrawerVisibility = () => {
+  if (typeof window !== "undefined") {
+    const width = window.innerWidth;
+    shouldShowDrawer.value = width <= 650;
+    if (width > 650) {
+      isMenu.value = false;
+    }
+  }
+};
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateDrawerVisibility);
+});
 </script>
 
 <style>
+@media (min-width: 651px) {
+  .drawer {
+    display: none;
+  }
+}
+
 a.active::before,
 a.notActive::after {
   content: "";
