@@ -80,6 +80,7 @@
                 class="py-8 text-2xl relative"
               >
                 <nuxt-link
+                  v-motion="SlideLeft"
                   :to="`/${item.id}`"
                   :class="{
                     active: isActive(item),
@@ -130,7 +131,7 @@
 import { useRoute } from "vue-router";
 import { socialBtn, navLinks } from "~/assets/constants";
 import ToggleMode from "~/components/Chunk/toggleMode.vue";
-import { MotionArr } from "~/assets/motions";
+import { SlideLeft } from "~/assets/motions";
 
 const route = useRoute();
 const isDark = ref(false);
