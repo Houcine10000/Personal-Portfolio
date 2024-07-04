@@ -75,7 +75,7 @@
             <li class="flex flex-col w-full">
               <div
                 @click="isMenu = false"
-                v-for="item in navLinks"
+                v-for="(item, i) in navLinks"
                 :key="item.id"
                 class="py-8 text-2xl relative"
               >
@@ -110,7 +110,7 @@
             </div>
 
             <!-- Theme Mode -->
-            <div class="flex justify-center">
+            <div class="absolute right-28 top-8">
               <ToggleMode @toggle-theme="toggleDarkMode" :isDark="isDark" />
             </div>
           </div>
@@ -130,6 +130,7 @@
 import { useRoute } from "vue-router";
 import { socialBtn, navLinks } from "~/assets/constants";
 import ToggleMode from "~/components/Chunk/toggleMode.vue";
+import { MotionArr } from "~/assets/motions";
 
 const route = useRoute();
 const isDark = ref(false);
