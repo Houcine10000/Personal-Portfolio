@@ -1,6 +1,6 @@
 <template>
   <section
-    class=" section h-full md:h-[120vh] flex flex-col md:flex-row gap-10 xl:gap-20"
+    class="section h-full md:h-[120vh] flex flex-col md:flex-row gap-10 xl:gap-20"
     id="about"
     v-motion="SlideBottom"
   >
@@ -22,22 +22,28 @@
     </div> -->
 
     <div class="">
-      <h1
-        class="text-[3rem] xs:text-[3.5rem] sm:text-[2.5rem] font-bold text-white pb-10"
-      >
+      <h1 class="text-[2rem] font-bold dark:text-white text-l_primary pb-10">
         Hi there.
       </h1>
 
       <p
-        class="leading-relaxed text-[22px] text-slate-400 font-normal"
+        class="leading-relaxed text-[22px] dark:text-slate-400 text-l_secondary font-normal"
       >
-        Hey! I'm <strong>Huceine ESSAMLALI</strong>, a Front-end Developer based
-        in <strong>Morocco</strong>. My passion is to create elegant and
-        functional web solutions that meet both industry standards and user
-        needs. I'm dedicated to acquire new skills that prove useful in the web
-        development landscape. My main stack currently is
-        <strong>Nuxt.js, Vue.js</strong> in combination with
-        <strong>Tailwind CSS</strong>.
+        Hey! I'm
+        <span class="dark:text-buttons_primary text-l_primary"
+          >Huceine ESSAMLALI</span
+        >, a Front-end Developer based in
+        <span class="dark:text-buttons_primary text-l_primary">Morocco</span>. My
+        passion is to create elegant and functional web solutions that meet both
+        industry standards and user needs. I'm dedicated to acquire new skills
+        that prove useful in the web development landscape. My main stack
+        currently is
+        <span class="dark:text-buttons_primary text-l_primary"
+          >Nuxt.js, Vue.js</span
+        >
+        in combination with
+        <span class="dark:text-buttons_primary text-l_primary">Tailwind CSS</span
+        >.
       </p>
     </div>
 

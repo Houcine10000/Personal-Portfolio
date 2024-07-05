@@ -1,17 +1,19 @@
 <template>
-  <section class="h-screen flex items-center justify-center" id="contact">
+  <section class="h-screen flex justify-center" id="contact">
     <form
       ref="form"
       @submit.prevent="sendMail"
-      class="w-[75%] sm:w-[60%] lg:w-[40%]"
+      class="w-[85%] sm:w-[60%] lg:w-[45%] mt-20"
       v-motion="SlideBottom"
     >
-      <div class="text-4xl font-medium text-white relative h-20 mb-16">
-        <span>Say hello</span>
+      <div
+        class="text-4xl font-medium dark:text-white text-primary relative h-24 mb-16"
+      >
+        <span class="ease-in duration-300">Say hello</span>
         <div class="line-shape"></div>
       </div>
 
-      <div class="relative z-0 w-full mb-10 group" ref="fade1">
+      <div class="relative z-0 w-full mb-16 group" ref="fade1">
         <input
           type="email"
           name="from_email"
@@ -25,7 +27,7 @@
         <label for="from_email" class="labelCnt"> Your email </label>
 
         <div
-          :class="`from-buttons_primary from-50% ${warningEmlCls ? 'to-error_primary' : 'to-slate-600'} button labelBtmBorder `"
+          :class="`dark:from-buttons_primary from-l_primary from-50% ${warningEmlCls ? 'dark:to-error_primary to-error_primary' : 'dark:to-zinc-700 to-l_border'} button labelBtmBorder `"
         ></div>
 
         <div
@@ -53,7 +55,7 @@
         <label for="message" class="labelCnt"> Message </label>
 
         <div
-          :class="`from-buttons_primary from-50% ${warningMsgCls ? 'to-error_primary' : 'to-slate-600'} button labelBtmBorder`"
+          :class="`dark:from-buttons_primary from-l_primary from-50% ${warningMsgCls ? 'dark:to-error_primary to-error_primary' : 'dark:to-zinc-700 to-l_border'} button labelBtmBorder `"
         ></div>
 
         <div
@@ -85,7 +87,7 @@
         :key="index"
       >
         <div
-          class="fill-primary social-svg pr-7"
+          class="dark:fill-primary fill-l_exstra_text social-svg pr-7"
           v-html="gineralWarningCls == 'text-green-400' ? item.load : item.svg"
         />
         <span> Send message </span>

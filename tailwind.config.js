@@ -5,6 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Dark Mode
+
         primary: "#040918",
         secondary: "#03071e",
         text_primary: "#E5E7EB",
@@ -19,6 +21,16 @@ export default {
 
         icons_border: "1E293B",
         tertiary: "#151030",
+
+        // Light Mode
+
+        l_primary: "#242423",
+        l_secondary: "#495057",
+
+        l_text: "#6c757d",
+        l_exstra_text: "#e9ecef",
+
+        l_border: "#adb5bd",
       },
 
       keyframes: {

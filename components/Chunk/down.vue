@@ -1,7 +1,7 @@
 <template>
   <div class="w-fit h-fit relative cursor-pointer bottom-5">
     <div
-      class="flex flex-col items-center justify-center w-44 h-44 border rounded-full border-white/15"
+      class="flex flex-col items-center justify-center ease-in duration-300 w-44 h-44 border rounded-full dark:border-white/15 border-l_border"
     >
       <p
         :class="`${circularText ? 'animate-border-spin' : ''} font-normal uppercase text-[18px]`"
@@ -11,7 +11,7 @@
       </p>
 
       <div class="arrow w-10 h-10 absolute">
-        <Icon class="w-10 h-10" name="charm:chevrons-down"/>
+        <Icon class="w-10 h-10" name="charm:chevrons-down" />
       </div>
     </div>
   </div>

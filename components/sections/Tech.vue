@@ -7,7 +7,7 @@
     <div>
       <div class="text-center">
         <h1
-          class="text-[3rem] xs:text-[3.5rem] sm:text-[4rem] font-bold text-white"
+          class="text-[3rem] xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
         >
           Tech Stack.
         </h1>

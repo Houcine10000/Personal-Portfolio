@@ -140,13 +140,14 @@ const isMenu = ref(false);
 // Function to toggle dark mode
 const toggleDarkMode = () => {
   isDark.value = !isDark.value;
-  localStorage.setItem("isDark", JSON.stringify(isDark.value));
+  localStorage.setItem("isDark", isDark.value);
   document.documentElement.classList.toggle("dark", isDark.value);
 };
 
 // On component mount, check local storage for dark mode preference
 onMounted(() => {
   isDark.value = localStorage.getItem("isDark") === "true";
+  document.documentElement.classList.toggle("dark", isDark.value);
 
   updateDrawerVisibility();
 

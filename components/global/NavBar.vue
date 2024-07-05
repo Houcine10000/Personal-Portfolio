@@ -1,8 +1,8 @@
 <template>
   <ul class="h-full py-12">
-    <li class="h-[80%] pb-10 pt-3 flex flex-col items-center justify-between">
+    <li class="h-[80%] pb-24 pt-5 flex flex-col items-center justify-between">
       <div
-        class="-rotate-90 w-full text-center text-md font-semibold tracking-wider"
+        class="-rotate-90 ease-in duration-300 w-full text-center dark:text-l_exstra_text text-l_primary text-md font-semibold tracking-wider"
         v-for="item in navLinks"
         :key="item.id"
       >

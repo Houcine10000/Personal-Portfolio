@@ -1,6 +1,6 @@
 <template>
   <label
-    class="swap swap-rotate text-center p-3 clipath hover:bg-white/5 cursor-pointer transition-all ease-out duration-300 fixed"
+    class="swap swap-rotate text-center p-3 clipath dark:hover:bg-white/5 hover:bg-l_exstra_text cursor-pointer transition-all ease-out duration-300 fixed"
   >
     <!-- this hidden checkbox controls the state -->
     <input
@@ -13,7 +13,7 @@
 
     <!-- sun icon -->
     <svg
-      class="swap-off h-10 w-10 fill-current"
+      class="swap-off h-10 w-10 dark:fill-slate-300 fill-l_primary"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
@@ -24,7 +24,7 @@
 
     <!-- moon icon -->
     <svg
-      class="swap-on h-10 w-10 fill-current"
+      class="swap-on h-10 w-10 dark:fill-slate-300 fill-l_primary"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >

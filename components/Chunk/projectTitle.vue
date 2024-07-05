@@ -11,7 +11,7 @@
         data-tilt-scale="1.05"
         v-motion="index % 2 === 0 ? SlideLeft : SlideRight"
       >
-        <div class="p-5 bg-secondary rounded-2xl flex flex-col relative h-full">
+        <div class="p-5 ease-in duration-300 dark:bg-secondary bg-l_exstra_text rounded-2xl flex flex-col relative h-full">
           <div class="w-full h-[230px] overflow-hidden relative">
             <NuxtPicture
               :src="project.image"
@@ -97,11 +97,11 @@
 
           <div class="my-5 h-fit">
             <h3
-              class="sm:text-[21px] text-[16px] font-semibold break-words text-text_primary"
+              class="sm:text-[21px] ease-in duration-300 text-[16px] font-semibold break-words dark:text-text_primary text-l_primary"
             >
               {{ project.name }}
             </h3>
-            <p class="sm:text-[15px] text-[12px] leading-6 text-slate-400">
+            <p class="sm:text-[15px] ease-in duration-300 text-[12px] leading-6 dark:text-l_border text-l_text">
               {{ project.description }}
             </p>
           </div>

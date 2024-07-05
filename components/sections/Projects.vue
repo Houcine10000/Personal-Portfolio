@@ -17,7 +17,7 @@
     </div>
 
     <h1
-      class="text-[2.5rem] xs:text-[3.5rem] lg:text-[4rem] font-bold text-white pt-12"
+      class="text-[2.5rem] ease-in duration-300 xs:text-[3.5rem] lg:text-[4rem] font-bold dark:text-white text-l_primary pt-12"
     >
       Featured Projects.
     </h1>
