@@ -17,7 +17,7 @@
       </div>
     </div> -->
 
-    <div class="">
+    <div class="" v-motion-fade-visible>
       <p
         class="dark:text-text_primary ease-in duration-300 text-l_primary text-[2rem] xs:text-[2.6rem] sm:text-[3.2rem] md:text-[3.5rem] xl:text-[4.5rem] font-light leading-tight"
       >
@@ -29,7 +29,9 @@
         precision.
       </p>
 
-      <p class="pt-10 ease-in duration-300 dark:text-white/55 text-l_secondary font-light">
+      <p
+        class="pt-10 ease-in duration-300 dark:text-white/55 text-l_secondary font-light"
+      >
         I create and develop a clean UI/UX for my users
       </p>
 
@@ -40,4 +42,6 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { SlideRight } from "~/assets/motions";
+</script>
