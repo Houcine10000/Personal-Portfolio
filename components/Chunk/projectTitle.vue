@@ -9,7 +9,7 @@
         class="p-[1px] bg-gradient-to-b text-gradient rounded-2xl"
         data-tilt
         data-tilt-scale="1.05"
-        v-motion="SlideBottom"
+        v-motion="index % 2 === 0 ? SlideLeft : SlideRight"
       >
         <div class="p-5 bg-secondary rounded-2xl flex flex-col relative h-full">
           <div class="w-full h-[230px] overflow-hidden relative">
@@ -137,7 +137,7 @@
 <script setup>
 const { projects } = defineProps(["projects"]);
 import { github, visit, search } from "~/assets";
-import { SlideBottom } from "~/assets/motions";
+import { SlideBottom, SlideLeft, SlideRight } from "~/assets/motions";
 </script>
 
 <style></style>

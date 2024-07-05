@@ -1,8 +1,6 @@
 <template>
-  <ul class="h-full py-16 flex flex-col justify-between items-center">
-    <li
-      class="group h-[80%] pb-10 pt-3 flex flex-col items-center justify-between"
-    >
+  <ul class="h-full py-12">
+    <li class="h-[80%] pb-10 pt-3 flex flex-col items-center justify-between">
       <div
         class="-rotate-90 w-full text-center text-md font-semibold tracking-wider"
         v-for="item in navLinks"
@@ -17,7 +15,7 @@
       </div>
     </li>
 
-    <div class="w-full h-16 flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center absolute w-full bottom-12">
       <NuxtLink
         v-for="(item, index) in socialBtn"
         :key="index"
@@ -30,7 +28,6 @@
     </div>
   </ul>
 </template>
-
 
 <script setup>
 import { useRoute } from "vue-router";
