@@ -9,9 +9,11 @@
         class="p-[1px] bg-gradient-to-b text-gradient rounded-2xl"
         data-tilt
         data-tilt-scale="1.05"
-        v-motion="index % 2 === 0 ? SlideLeft : SlideRight"
+        v-motion="motion ? SlideLeft : SlideRight"
       >
-        <div class="p-5 ease-in duration-300 dark:bg-secondary bg-l_exstra_text rounded-2xl flex flex-col relative h-full">
+        <div
+          class="p-5 ease-in duration-300 dark:bg-secondary bg-l_exstra_text rounded-2xl flex flex-col relative h-full"
+        >
           <div class="w-full h-[230px] overflow-hidden relative">
             <NuxtPicture
               :src="project.image"
@@ -101,7 +103,9 @@
             >
               {{ project.name }}
             </h3>
-            <p class="sm:text-[15px] ease-in duration-300 text-[12px] leading-6 dark:text-l_border text-l_text">
+            <p
+              class="sm:text-[15px] ease-in duration-300 text-[12px] leading-6 dark:text-l_border text-l_text"
+            >
               {{ project.description }}
             </p>
           </div>
@@ -138,6 +142,26 @@
 const { projects } = defineProps(["projects"]);
 import { github, visit, search } from "~/assets";
 import { SlideBottom, SlideLeft, SlideRight } from "~/assets/motions";
-</script>
 
-<style></style>
+const motion = ref(false);
+
+const updateMotionType = () => {
+  const width = window.innerWidth;
+
+  localStorage.setItem("window", width);
+
+  console.log(motion.value);
+};
+
+onMounted(() => {
+  if (localStorage.getItem("window") <= 650) {
+    motion.value = true;
+  } else {
+    motion.value = false;
+  }
+
+  updateMotionType();
+
+  window.addEventListener("resize", updateMotionType);
+});
+</script>

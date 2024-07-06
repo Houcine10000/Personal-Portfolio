@@ -20,7 +20,7 @@ export const SlideLeft = {
     opacity: 0,
   },
 
-  visibleOnce: {
+  visible: {
     x: 0,
     opacity: 1,
     transition: {
@@ -36,7 +36,7 @@ export const SlideRight = {
     opacity: 0,
   },
 
-  visibleOnce: {
+  visible: {
     x: 0,
     opacity: 1,
     transition: {
