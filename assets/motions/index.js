@@ -32,7 +32,7 @@ export const SlideLeft = {
 
 export const SlideRight = {
   initial: {
-    x: 100,
+    x: -200,
     opacity: 0,
   },
 
@@ -40,7 +40,7 @@ export const SlideRight = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 600,
+      duration: 1200,
       ease: "ease",
     },
   },

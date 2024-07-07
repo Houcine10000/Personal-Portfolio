@@ -4,7 +4,7 @@
       ref="form"
       @submit.prevent="sendMail"
       class="w-[85%] sm:w-[60%] lg:w-[45%] mt-20"
-      v-motion="SlideBottom"
+      v-motion="SlideLeft"
     >
       <div
         class="text-4xl font-medium dark:text-white text-primary relative h-24 mb-16"
@@ -99,7 +99,7 @@
 <script setup>
 import { hireMeBtn } from "~/assets/constants";
 import emailjs from "@emailjs/browser";
-import { SlideBottom } from "~/assets/motions";
+import { SlideBottom, SlideLeft } from "~/assets/motions";
 import autoAnimate from "@formkit/auto-animate";
 
 // definePageMeta({

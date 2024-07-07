@@ -1,5 +1,6 @@
 <template>
   <div class="w-fit h-fit relative cursor-pointer bottom-5">
+    <nuxt-link to="#projects">
     <div
       class="flex flex-col items-center justify-center ease-in duration-300 w-44 h-44 border rounded-full dark:border-white/15 border-l_border"
     >
@@ -10,10 +11,11 @@
         my projects • my projects •
       </p>
 
-      <div class="arrow w-10 h-10 absolute">
-        <Icon class="w-10 h-10" name="charm:chevrons-down" />
+        <div class="arrow w-10 h-10 absolute">
+          <Icon class="w-10 h-10" name="charm:chevrons-down" />
+        </div>
       </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 

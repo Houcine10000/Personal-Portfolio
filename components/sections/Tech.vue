@@ -5,12 +5,13 @@
     v-motion="SlideBottom"
   >
     <div>
-      <div class="text-center">
+      <div class="text-center flex items-center justify-center">
         <h1
-          class="text-[3rem] xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
+          class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
         >
-          Tech Stack.
+          Tech Stack
         </h1>
+        <div class="line-smpl ml-2 "></div>
       </div>
 
       <div

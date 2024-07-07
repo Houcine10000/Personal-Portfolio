@@ -9,7 +9,7 @@
         class="p-[1px] bg-gradient-to-b text-gradient rounded-2xl"
         data-tilt
         data-tilt-scale="1.05"
-        v-motion="motion ? SlideLeft : SlideRight"
+        v-motion="index % 2 === 0 ? SlideRight : SlideLeft"
       >
         <div
           class="p-5 ease-in duration-300 dark:bg-secondary bg-l_exstra_text rounded-2xl flex flex-col relative h-full"
@@ -143,25 +143,25 @@ const { projects } = defineProps(["projects"]);
 import { github, visit, search } from "~/assets";
 import { SlideBottom, SlideLeft, SlideRight } from "~/assets/motions";
 
-const motion = ref(false);
+// const motion = ref(false);
 
-const updateMotionType = () => {
-  const width = window.innerWidth;
+// const updateMotionType = () => {
+//   const width = window.innerWidth;
 
-  localStorage.setItem("window", width);
+//   localStorage.setItem("window", width);
 
-  console.log(motion.value);
-};
+//   console.log(motion.value);
+// };
 
-onMounted(() => {
-  if (localStorage.getItem("window") <= 650) {
-    motion.value = true;
-  } else {
-    motion.value = false;
-  }
+// onMounted(() => {
+//   if (localStorage.getItem("window") <= 650) {
+//     motion.value = true;
+//   } else {
+//     motion.value = false;
+//   }
 
-  updateMotionType();
+//   updateMotionType();
 
-  window.addEventListener("resize", updateMotionType);
-});
+//   window.addEventListener("resize", updateMotionType);
+// });
 </script>

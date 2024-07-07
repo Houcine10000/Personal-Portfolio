@@ -22,12 +22,13 @@
     </div> -->
 
     <div class="">
-      <h1 class="text-[2rem] font-bold dark:text-white text-l_primary pb-10">
+      <h1 class="text-[2rem] relative w-fit font-bold dark:text-white text-l_primary pb-1.5">
         Hi there.
+      <div class="line-shape ">s</div>
       </h1>
 
       <p
-        class="leading-relaxed text-[22px] dark:text-slate-400 text-l_secondary font-normal"
+        class="leading-relaxed text-[22px] dark:text-slate-400 text-l_secondary font-normal mt-10"
       >
         Hey! I'm
         <span class="dark:text-buttons_primary text-l_primary"

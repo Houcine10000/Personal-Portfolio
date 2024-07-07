@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="section h-fit">
-    <div class="badg-box">
+    <!-- <div class="badg-box">
       <div class="badg">
         <svg
           width="20"
@@ -14,15 +14,18 @@
         </svg>
         projects
       </div>
-    </div>
+    </div> -->
 
-    <h1
-      class="text-[2.5rem] ease-in duration-300 xs:text-[3.5rem] lg:text-[4rem] font-bold dark:text-white text-l_primary pt-12"
-    >
-      Featured Projects.
-    </h1>
+    <div class="text-center flex items-center justify-center">
+        <h1
+          class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
+        >
+        Featured Projects
+        </h1>
+        <div class="line-smpl ml-2 "></div>
+      </div>
   </section>
-  <LazyChunkProjectTitle :projects="projects" />
+    <LazyChunkProjectTitle :projects="projects" />
 </template>
 
 <script setup>
