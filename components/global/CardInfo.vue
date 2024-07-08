@@ -21,8 +21,8 @@
 
       <figure class="px-4 h-52">
         <img
-          class="object-cover h-full w-64 rounded-3xl"
-          src="/images/zang.jpg"
+          class="object-cover object-left-top h-full w-64 rounded-3xl"
+          src="/images/profile.png"
           alt="Shoes"
         />
       </figure>

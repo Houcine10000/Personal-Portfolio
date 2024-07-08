@@ -1,7 +1,7 @@
 <template>
   <div class="section h-fit">
     <div
-      class="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-7 mb-9 xs:mx-10 sm:mx-0 lg:mx-10 xl:mx-0 xl:mr-5"
+      class="grid md:grid-cols-2 gap-7 mb-9 xs:mx-10 sm:mx-0 lg:mx-10 xl:mx-0 xl:mr-5"
     >
       <div
         v-for="(project, index) in projects"

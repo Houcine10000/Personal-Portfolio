@@ -20,7 +20,7 @@
         <h1
           class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
         >
-        Featured Projects
+        Projects
         </h1>
         <div class="line-smpl ml-2 "></div>
       </div>

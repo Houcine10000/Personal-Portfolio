@@ -17,6 +17,10 @@
   body {
     @apply h-full w-full dark:bg-primary bg-slate-50 ease-in duration-300;
   }
+
+  ::selection {
+    @apply bg-buttons_primary text-black;
+  }
 }
 
 @layer components {
@@ -65,7 +69,7 @@
     clip-path: polygon(30% 91%, 100% 91%, 100% 94%, 20% 94%, 18% 100%, 2% 100%, 0px 91%);
   }
   .line-smpl{
-    @apply dark:bg-buttons_primary bg-primary h-0.5 w-full lg:w-52 ease-in duration-300;
+    @apply dark:bg-buttons_primary bg-primary h-0.5 w-[50%] lg:w-52 ease-in duration-300;
   }
 
   .contact-btn{
