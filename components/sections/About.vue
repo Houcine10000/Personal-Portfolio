@@ -1,6 +1,6 @@
 <template>
   <section
-    class="section h-full md:h-[120vh] flex flex-col md:flex-row gap-10 xl:gap-20"
+    class="section w-full h-full lg:h-[120vh] flex flex-col lg:flex-row gap-0 lg:gap-10 xl:gap-20"
     id="about"
     v-motion="SlideBottom"
   >
@@ -22,9 +22,10 @@
     </div> -->
 
     <div class="">
-      <h1 class="text-[2rem] relative w-fit font-bold dark:text-white text-l_primary pb-1.5">
+      <h1
+        class="text-[2rem] w-fit font-bold dark:text-white text-l_primary pb-1.5"
+      >
         Hi there.
-      <div class="line-shape ">s</div>
       </h1>
 
       <p
@@ -34,21 +35,22 @@
         <span class="dark:text-buttons_primary text-l_primary"
           >Huceine ESSAMLALI</span
         >, a Front-end Developer based in
-        <span class="dark:text-buttons_primary text-l_primary">Morocco</span>. My
-        passion is to create elegant and functional web solutions that meet both
-        industry standards and user needs. I'm dedicated to acquire new skills
-        that prove useful in the web development landscape. My main stack
+        <span class="dark:text-buttons_primary text-l_primary">Morocco</span>.
+        My passion is to create elegant and functional web solutions that meet
+        both industry standards and user needs. I'm dedicated to acquire new
+        skills that prove useful in the web development landscape. My main stack
         currently is
         <span class="dark:text-buttons_primary text-l_primary"
           >Nuxt.js, Vue.js</span
         >
         in combination with
-        <span class="dark:text-buttons_primary text-l_primary">Tailwind CSS</span
+        <span class="dark:text-buttons_primary text-l_primary"
+          >Tailwind CSS</span
         >.
       </p>
     </div>
 
-    <div class="md:flex md:items-end md:mt-14">
+    <div class="lg:flex lg:items-end lg:mt-14">
       <CardInfo />
     </div>
   </section>

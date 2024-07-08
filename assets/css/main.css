@@ -42,7 +42,7 @@
   }
 
   .section {
-    @apply sm:h-screen h-[90vh]  pt-16 lg:pr-2 lg:pt-20 px-4 sm:px-10;
+    @apply sm:h-screen h-[90vh]  pt-16 lg:pr-2 lg:pt-20 px-4 sm:px-10 ease-in duration-300;
   }
 
   .badg-box{
@@ -67,6 +67,10 @@
   .line-shape{
     @apply dark:bg-buttons_primary bg-primary h-28 w-full absolute bottom-0 left-0 ease-in duration-300;
     clip-path: polygon(30% 91%, 100% 91%, 100% 94%, 20% 94%, 18% 100%, 2% 100%, 0px 91%);
+  }
+  .line-about{
+    @apply dark:bg-buttons_primary bg-primary h-28 w-[20%] ease-in duration-300;
+    clip-path: polygon(30% 91.5%, 100% 91.5%, 100% 93%, 58% 93%, 50% 100%, 8% 100%, 0px 91.5%);
   }
   .line-smpl{
     @apply dark:bg-buttons_primary bg-primary h-0.5 w-[50%] lg:w-52 ease-in duration-300;

@@ -7,7 +7,10 @@
       <div
         class="w-full h-28 fixed z-50 flex items-center justify-between px-5 xs:hidden"
       >
-        <strong class="text-4xl font-extrabold text-l_primary dark:text-l_exstra_text">H</strong>
+        <strong
+          class="text-4xl font-extrabold text-l_primary dark:text-l_exstra_text"
+          >H</strong
+        >
 
         <!-- -------|> Menu <|-------- -->
 
