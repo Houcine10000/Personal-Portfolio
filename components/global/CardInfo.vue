@@ -1,5 +1,5 @@
 <template>
-  <div class="cnt">
+  <div class="">
     <div class="flex items-center">
       <div class="line-about mb-10"></div>
       <div

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="section w-full h-full lg:h-[120vh] flex flex-col lg:flex-row gap-0 lg:gap-10 xl:gap-20"
+    class="section md:px-20 lg:px-0 w-full h-full flex flex-col lg:flex-row gap-0 lg:gap-10 xl:gap-20"
     id="about"
     v-motion="SlideBottom"
   >

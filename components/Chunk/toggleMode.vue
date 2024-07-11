@@ -1,6 +1,6 @@
 <template>
   <label
-    class="swap swap-rotate text-center p-3 clipath dark:hover:bg-l_exstra_text/10 hover:bg-l_primary/15 cursor-pointer transition-all ease-out duration-300 fixed"
+    class="swap swap-rotate text-center p-3 clipath hover:bg-l_primary/20 cursor-pointer transition-all ease-out duration-300 fixed"
   >
     <!-- this hidden checkbox controls the state -->
     <input
