@@ -7,11 +7,11 @@
     <div>
       <div class="text-center flex items-center justify-center">
         <h1
-          class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
+          class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary transition-colors ease-in duration-300"
         >
           Tech Stack
         </h1>
-        <div class="line-smpl ml-2 "></div>
+        <div class="line-smpl ml-2"></div>
       </div>
 
       <div
@@ -20,10 +20,10 @@
         <div
           v-for="tech in technologies"
           :key="tech.name"
-          class="transition-all duration-1000 group relative"
+          class="transition-all ease-in duration-1000 group relative"
         >
           <div
-            class="w-20 h-20 p-2 bg-[#ffffff11] rounded-xl hover:border-teal-500 hover:p-3 transition-all duration-500"
+            class="w-20 h-20 p-2 bg-l_primary/20 rounded-xl hover:border-teal-500 hover:p-3 ease-in duration-300"
           >
             <NuxtImg
               format="webp"

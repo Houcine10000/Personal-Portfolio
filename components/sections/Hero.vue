@@ -19,7 +19,7 @@
 
     <div class="" v-motion-fade-visible>
       <p
-        class="dark:text-text_primary ease-in duration-300 text-l_primary text-[2.4rem] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] xl:text-[4.5rem] font-light leading-tight"
+        class="dark:text-text_primary transition-colors ease-in duration-300 text-l_primary text-[2.4rem] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] xl:text-[4.5rem] font-light leading-tight"
       >
         Say Hi from
         <span
@@ -30,7 +30,7 @@
       </p>
 
       <p
-        class="pt-10 ease-in duration-300 dark:text-white/55 text-l_secondary font-light"
+        class="pt-10 transition-colors ease-in duration-300 dark:text-white/55 text-l_secondary font-light"
       >
         I create and develop a clean UI/UX for my users
       </p>

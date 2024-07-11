@@ -1,7 +1,7 @@
 <template>
   <nuxt-link href="contact" class="hireMe-btn">
     <span
-      class="flex items-center"
+      class="flex items-center transition-colors ease-in duration-300"
       v-for="(item, index) in hireMeBtn"
       :key="index"
     >

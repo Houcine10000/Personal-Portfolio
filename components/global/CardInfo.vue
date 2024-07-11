@@ -3,7 +3,7 @@
     <div class="flex items-center">
       <div class="line-about mb-10"></div>
       <div
-        class="mt-14 ml-4 font-medium text-l_primary dark:text-buttons_primary ease-in duration-300"
+        class="mt-14 ml-4 font-medium text-l_primary dark:text-buttons_primary transition-colors ease-in duration-300"
       >
         About me
       </div>
@@ -38,11 +38,11 @@
 
         <div class="flex justify-center items-center card-body mt-4">
           <p
-            class="text-lg leading-none dark:text-white text-l_primary font-light"
+            class="text-lg leading-none dark:text-white text-l_primary font-light transition-colors ease-in duration-300"
           >
             essamlalielhoucine60@gmail.com
           </p>
-          <p class="text-lg dark:text-white text-l_primary font-light">
+          <p class="text-lg dark:text-white text-l_primary font-light transition-colors ease-in duration-300">
             Base in Morocco
           </p>
           <p class="text-xs mt-4 dark:text-slate-400 text-slate-500">

@@ -17,15 +17,15 @@
     </div> -->
 
     <div class="text-center flex items-center justify-center">
-        <h1
-          class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary"
-        >
+      <h1
+        class="text-[3rem] text-nowrap xs:text-[3.5rem] sm:text-[4rem] font-bold dark:text-white text-l_primary transition-colors ease-in duration-300"
+      >
         Projects
-        </h1>
-        <div class="line-smpl ml-2 "></div>
-      </div>
+      </h1>
+      <div class="line-smpl ml-2"></div>
+    </div>
   </section>
-    <LazyChunkProjectTitle :projects="projects" />
+  <LazyChunkProjectTitle :projects="projects" />
 </template>
 
 <script setup>

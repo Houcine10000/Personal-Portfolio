@@ -8,14 +8,14 @@
         class="w-full h-28 fixed z-50 flex items-center justify-between px-5 xs:hidden"
       >
         <strong
-          class="text-4xl font-extrabold text-l_primary dark:text-l_exstra_text"
+          class="text-4xl font-extrabold text-l_primary dark:text-l_exstra_text transition-colors ease-in duration-300"
           >H</strong
         >
 
         <!-- -------|> Menu <|-------- -->
 
         <label
-          class="swap swap-rotate text-center p-3 clipath dark:hover:bg-l_exstra_text/10 hover:bg-l_primary/15 cursor-pointer transition-all ease-out duration-300"
+          class="swap swap-rotate text-center p-3 clipath hover:bg-l_primary/20 cursor-pointer"
         >
           <input
             @click="toggleMenu"
@@ -28,7 +28,7 @@
           <!-- Berger menu icon -->
 
           <svg
-            class="swap-off h-10 w-10 dark:fill-slate-300 fill-l_primary"
+            class="swap-off h-10 w-10 dark:fill-slate-300 fill-l_primary transition-colors ease-in duration-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -40,7 +40,7 @@
           <!-- Close icon -->
 
           <svg
-            class="swap-on h-10 w-10 dark:fill-slate-300 fill-l_primary"
+            class="swap-on h-10 w-10 dark:fill-slate-300 fill-l_primary transition-colors ease-in duration-300"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -63,16 +63,14 @@
           class="drawer-toggle hidden"
         />
 
-        <div
-          class="drawer-side fixed top-0 left-0 right-0 w-full transform transition-transform duration-300 ease-in-out"
-        >
+        <div class="drawer-side fixed top-0 left-0 right-0 w-full">
           <label
             for="my-drawer-4"
             aria-label="close sidebar"
             class="drawer-overlay"
           ></label>
           <ul
-            class="h-screen drawer-bg dark:bg-[#3939394d] bg-[#f3f3f365] w-full px-16 flex items-center justify-center"
+            class="h-screen drawer-bg dark:bg-[#3939394d] bg-[#f3f3f365] transition-colors ease-in duration-300 w-full px-16 flex items-center justify-center"
           >
             <!-- Sidebar content here -->
             <li class="flex flex-col w-full">
@@ -80,7 +78,7 @@
                 @click="isMenu = false"
                 v-for="(item, i) in navLinks"
                 :key="item.id"
-                class="py-8 text-2xl font-light text-l_primary dark:text-l_exstra_text relative"
+                class="py-8 text-2xl font-light text-l_primary dark:text-l_exstra_text transition-colors ease-in duration-300 relative"
               >
                 <nuxt-link
                   v-motion="SlideLeft"
