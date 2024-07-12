@@ -1,6 +1,6 @@
 <template>
   <section
-    class="section w-full h-full flex flex-col lg:flex-row gap-0 lg:gap-10 xl:gap-20"
+    class="section px-0 w-full h-full flex flex-col abt_md:flex-row gap-0 abt_md:gap-10 xl:gap-20"
     id="about"
     v-motion="SlideBottom"
   >
@@ -21,7 +21,7 @@
       </div>
     </div> -->
 
-    <div class="">
+    <div class="flex flex-col w-full ">
       <h1
         class="text-[2rem] w-fit font-bold dark:text-white text-l_primary pb-1.5"
       >
@@ -50,7 +50,7 @@
       </p>
     </div>
 
-    <div class="md:flex md:justify-end lg:justify-normal lg:mt-16">
+    <div class="flex justify-end w-full">
       <CardInfo />
     </div>
   </section>

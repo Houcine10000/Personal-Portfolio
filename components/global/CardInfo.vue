@@ -1,5 +1,5 @@
 <template>
-  <div class="md:w-[60%] abt_md:w-[55%]">
+  <div class="w-[60%] lg:w-fit">
     <div class="flex items-center">
       <div class="line-about mb-10"></div>
       <div
