@@ -52,6 +52,8 @@ export default {
 
       md: "990px",
 
+      abt_md: "1090px",
+
       lg: "1180px",
 
       xl: "1280px",
