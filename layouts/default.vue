@@ -162,7 +162,7 @@ const toggleMenu = () => {
 
 // Function to check if the link is active
 const isActive = (item) => {
-  return item.id === route.hash.substring(1) || item.id === route.name;
+  return item.id === route.hash || item.id === route.name;
 };
 
 const shouldShowDrawer = ref(false);
@@ -206,36 +206,36 @@ a.notActive::after {
 }
 
 a.active::before {
-  animation: slideLeft 0s forwards;
+  animation: slideRight 0s forwards;
 }
 a.notActive:hover::after {
-  animation: slideLeft 0.4s forwards;
+  animation: slideRight 0.3s forwards;
 }
 
 a:not(.active)::before,
 a.notActive:not(:hover)::after {
-  animation: slideRight 0.4s forwards;
+  animation: slideLeft 0.3s forwards;
 }
 
 @keyframes slideRight {
   from {
-    right: 0;
-    width: 100%;
-  }
-  to {
     right: 100%;
     width: 0;
+  }
+  to {
+    right: 0;
+    width: 100%;
   }
 }
 
 @keyframes slideLeft {
   from {
-    left: 100%;
-    width: 0;
-  }
-  to {
     left: 0;
     width: 100%;
+  }
+  to {
+    left: 100%;
+    width: 0;
   }
 }
 </style>
