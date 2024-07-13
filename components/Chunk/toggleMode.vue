@@ -13,7 +13,7 @@
 
     <!-- sun icon -->
     <svg
-      class="swap-off h-10 w-10 dark:fill-slate-300 fill-l_primary"
+      class="swap-off h-10 w-10 fill-l_primary"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
@@ -24,7 +24,7 @@
 
     <!-- moon icon -->
     <svg
-      class="swap-on h-10 w-10 dark:fill-slate-300 fill-l_primary"
+      class="swap-on h-10 w-10 fill-indigo-200 stroke-slate-600"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
