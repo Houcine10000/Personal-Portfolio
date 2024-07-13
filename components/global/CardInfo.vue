@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[60%] lg:w-fit">
-    <div class="flex items-center">
+  <div class="w-full flex flex-col items-end">
+    <div class="flex items-center w-full sm:w-[60%] abt_md:w-full">
       <div class="line-about mb-10"></div>
       <div
         class="mt-14 ml-4 font-medium text-l_primary dark:text-buttons_primary transition-colors ease-in duration-300"
@@ -8,7 +8,7 @@
         About me
       </div>
     </div>
-    <div class="card-wrapper lg:w-[26rem] w-full h-[40rem]">
+    <div class="card-wrapper w-full sm:w-[60%] abt_md:w-full h-[40rem]">
       <div class="card-content card rounded-none px-8">
         <div class="flex flex-row justify-between px-0 card-body">
           <div class="text-4xl font-bold flex gap-1">
@@ -42,7 +42,9 @@
           >
             essamlalielhoucine60@gmail.com
           </p>
-          <p class="text-lg dark:text-white text-l_primary font-light transition-colors ease-in duration-300">
+          <p
+            class="text-lg dark:text-white text-l_primary font-light transition-colors ease-in duration-300"
+          >
             Base in Morocco
           </p>
           <p class="text-xs mt-4 dark:text-slate-400 text-slate-500">
