@@ -1,5 +1,6 @@
 <template>
   <label
+    v-if="!loading"
     class="swap swap-rotate text-center p-3 clipath hover:bg-l_primary/20 cursor-pointer transition-all ease-out duration-300 fixed"
   >
     <!-- this hidden checkbox controls the state -->
@@ -38,20 +39,18 @@
 <script setup>
 const emits = defineEmits(["toggleTheme"]);
 
-const swap = ref("");
-
-// onMounted(() => {
-//   swap.value = "swap-off";
-// });
-
-// onUnmounted(() => {
-//   swap.value = "swap-on";
-// })
-
 const props = defineProps({
   isDark: {
     type: Boolean,
     required: true,
   },
+});
+
+const loading = ref(true); // Start with loading true
+
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false; // Show the icons once the component is mounted and the theme state is ready
+  }, 0); // Adjust the timeout to suit your needs (200ms for fast render)
 });
 </script>
