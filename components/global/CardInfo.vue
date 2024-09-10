@@ -15,7 +15,7 @@
             <div class="dark:text-white text-l_primary">Huceine</div>
 
             <div
-              class="text-[11px] font-bold w-5 h-5 rounded-full border border-white/55"
+              class="text-[11px] font-bold w-5 h-5 rounded-full border dark:border-white/55 border-l_primary"
             >
               <div
                 class="flex items-center justify-center w-full h-full rounded-full dark:text-white text-l_primary"
@@ -28,10 +28,10 @@
           <div class="dark:text-white text-l_primary">Developer</div>
         </div>
 
-        <figure class="px-4 h-52">
+        <figure class="h-52">
           <img
-            class="object-cover object-left-top h-full w-64 rounded-3xl"
-            src="/images/profile.png"
+            class="object-cover object-top h-full w-72 rounded"
+            src="/images/profile.JPG"
             alt="Shoes"
           />
         </figure>
@@ -40,7 +40,7 @@
           <p
             class="text-lg leading-none dark:text-white text-l_primary font-light transition-colors ease-in duration-300"
           >
-            essamlalielhoucine60@gmail.com
+            essamlali.houcine@gmail.com
           </p>
           <p
             class="text-lg dark:text-white text-l_primary font-light transition-colors ease-in duration-300"
