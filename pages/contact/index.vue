@@ -81,14 +81,15 @@
       </div>
 
       <button
+        @click="isClicked"
         type="submit"
-        class="contact-btn"
+        class="contact-btn dark:bg-buttons_primary dark:text-primary"
         v-for="(item, index) in hireMeBtn"
         :key="index"
       >
         <div
           class="dark:fill-primary fill-l_exstra_text social-svg pr-7"
-          v-html="gineralWarningCls == 'text-green-400' ? item.load : item.svg"
+          v-html="checkIsClicked ? item.load : item.svg"
         />
         <span> Send message </span>
       </button>
@@ -109,6 +110,13 @@ import autoAnimate from "@formkit/auto-animate";
 const fade1 = ref(); // we need a DOM node
 const fade2 = ref(); // we need a DOM node
 
+const checkIsClicked = ref(false);
+
+const isClicked = () => {
+  if (emailTouched.value) {
+    checkIsClicked.value = true;
+  }
+};
 onMounted(() => {
   autoAnimate(fade1.value); // thats it!
   autoAnimate(fade2.value); // thats it!
@@ -204,6 +212,7 @@ const sendMail = () => {
           setErr("text-green-400", "Your message has been sent successfully.");
 
           form.value.reset();
+          checkIsClicked.value = false;
 
           setTimeout(() => {
             gineralWarningCls.value = null;
